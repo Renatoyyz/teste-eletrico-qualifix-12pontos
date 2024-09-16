@@ -53,7 +53,7 @@ class RotinaPrg:
         self.nome_programa = ""
         self.url_img_esquerdo = ""
         self.url_img_direito = ""
-
+    
         self.coord_eletrodo_esquerdo = [ None for _ in range(10) ]
         self.coord_eletrodo_direito = [ None for _ in range(10) ]
         

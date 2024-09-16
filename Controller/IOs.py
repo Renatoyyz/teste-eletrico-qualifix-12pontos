@@ -121,31 +121,8 @@ class IO_MODBUS:
         self.valor_saida_geral = 0
         self.valor_saida_geral2 = 0
 
-        self.fake_modbus = False
-
-        self.entradas_wp8026 = {
-            "in_1": 0,
-            "in_2": 0,
-            "in_3": 0,
-            "in_4": 0,
-            "in_5": 0,
-            "in_6": 0,
-            "in_7": 0,
-            "in_8": 0,
-            "in_9": 0,
-            "in_10": 0,
-            "in_11": 0,
-            "in_12": 0,
-            "in_13": 0,
-            "in_14": 0,
-            "in_15": 0,
-            "in_16": 0,
-        }
-        self.habilita_saida = False
+        self.fake_modbus = True
         self.adr = self.ADR_1
-        self.saida = 0
-        self.on_off = 0
-        self.cnt_entradas = 1
         try:
             self.ser = serial.Serial(
                                         port='/dev/ttyUSB0',  # Porta serial padrão no Raspberry Pi 4
@@ -161,12 +138,6 @@ class IO_MODBUS:
         except Exception as e:
             print(f"Erro ao conectar com a serial: {e}")
             return
-
-    def aciona_saida(self,adr,out,on_off):
-        self.habilita_saida = True
-        self.saida = out
-        self.adr=adr
-        self.on_off=on_off
 
     def crc16_modbus(self, data):
         crc = 0xFFFF
@@ -196,8 +167,6 @@ class IO_MODBUS:
             mask = self.valor_saida_geral
         elif adr == self.ADR_4:
             mask = self.valor_saida_geral2
-
-
 
         if (adr == self.ADR_1 or adr == self.ADR_2 or adr == self.ADR_3 or adr == self.ADR_4) and (on_off==1):  # Corrigindo a condição
             id_loc = hex(adr)[2:]

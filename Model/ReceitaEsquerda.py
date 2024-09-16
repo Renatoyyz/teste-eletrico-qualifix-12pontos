@@ -58,7 +58,7 @@ class TelaReceitaEsquerda(QDialog):
         self.ui.btSetaDir.clicked.connect(self.seta_direita)
         self.ui.btLimparEletrodo.clicked.connect(self.limpar_eletrodo_escolhido)
         self.ui.btAdicionar.clicked.connect(self.adiciona_ligacao)
-        self.ui.btTestarConexao.clicked.connect(self.testa_conexao)
+        self.ui.btTestarConexao.clicked.connect(self.testa_conexao)      
 
         self.ui.rbtConecEsquerdo_1.clicked.connect(self.conector_esquerdo1)
         self.ui.rbtConecEsquerdo_2.clicked.connect(self.conector_esquerdo2)
