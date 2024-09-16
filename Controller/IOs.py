@@ -111,10 +111,12 @@ class IO_MODBUS:
     def __init__(self):
 
         self.io_rpi = InOut()
-        self.ADR_1 = 1 # Endereço do WP8027 dos relés do lado esquerdo - 16 saídas
-        self.ADR_2 = 2 # Endereço do WP8027 dos relés do lado direito - 16 saídas
-        self.ADR_3 = 3 # Endereço do WP8027 de automações em geral - 16 saídas
-        self.ADR_4 = 4 # Endereço do WP8026 de automações em geral - 16 entradas
+        self.ADR_1 = 1 # Endereço do WP8027 - saidas digitais
+        self.ADR_2 = 2 # Endereço do WP8027 - saidas digitais
+        self.ADR_3 = 3 # Endereço do WP8027 - saidas digitais
+        self.ADR_4 = 4 # Endereço do WP8028 - entrada e saídas digitais
+        self.ADR_1_X = 5 # Endereço que representa a conbinação entre dois modulos WP8027
+        self.ADR_2_X = 6 # Endereço que representa a conbinação entre dois modulos WP8027
 
         self.valor_saida_direito = 0
         self.valor_saida_esquerdo = 0
@@ -152,6 +154,32 @@ class IO_MODBUS:
         return crc
 
     def wp_8027(self, adr, out, on_off):
+        if adr == self.ADR_1_X:
+            if out >=1 and out <=8:# Se saída for entre 1 e 8
+                adr = self.ADR_1 # Usa o módulo 1
+            elif out >= 9 and out <= 12:# Se saída for entre 9 e 12
+                adr = self.ADR_2 # Usa o módulo 2
+                out = out-8 # e corrige para a saída do módulo 2
+            elif out >=13 and out <=20:
+                adr = self.ADR_1
+                out = out-4
+            elif out >= 21 and out <= 24:
+                adr = self.ADR_2
+                out = out-12
+
+        elif adr == self.ADR_2_X:
+            if out >=1 and out <=4:# Se saída for entre 1 e 4
+                adr = self.ADR_2 # Usa o módulo 2
+                out = out+4
+            elif out >= 5 and out <= 12:# Se saída for entre 5 e 12
+                adr = self.ADR_3 # Usa o módulo 3
+                out = out-4 # e corrige para a saída do módulo 3
+            elif out >=13 and out <=16:
+                adr = self.ADR_2
+            elif out >= 17 and out <= 24:
+                adr = self.ADR_3
+                out = out-8
+        
         if self.fake_modbus == False:
             return self.wp_8027_(adr=adr, out=out,on_off=on_off)
         else:

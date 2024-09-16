@@ -68,6 +68,10 @@ class TelaReceitaEsquerda(QDialog):
         self.ui.rbtConecEsquerdo_6.clicked.connect(self.conector_esquerdo6)
         self.ui.rbtConecEsquerdo_7.clicked.connect(self.conector_esquerdo7)
         self.ui.rbtConecEsquerdo_8.clicked.connect(self.conector_esquerdo8)
+        self.ui.rbtConecEsquerdo_9.clicked.connect(self.conector_esquerdo9)
+        self.ui.rbtConecEsquerdo_10.clicked.connect(self.conector_esquerdo10)
+        self.ui.rbtConecEsquerdo_11.clicked.connect(self.conector_esquerdo11)
+        self.ui.rbtConecEsquerdo_12.clicked.connect(self.conector_esquerdo12)
 
         self.ui.rbtEletrodoEsquerdo_1.clicked.connect(self.pino_tomada_eletrodo1)
         self.ui.rbtEletrodoEsquerdo_2.clicked.connect(self.pino_tomada_eletrodo2)
@@ -77,6 +81,10 @@ class TelaReceitaEsquerda(QDialog):
         self.ui.rbtEletrodoEsquerdo_6.clicked.connect(self.pino_tomada_eletrodo6)
         self.ui.rbtEletrodoEsquerdo_7.clicked.connect(self.pino_tomada_eletrodo7)
         self.ui.rbtEletrodoEsquerdo_8.clicked.connect(self.pino_tomada_eletrodo8)
+        self.ui.rbtEletrodoEsquerdo_9.clicked.connect(self.pino_tomada_eletrodo9)
+        self.ui.rbtEletrodoEsquerdo_10.clicked.connect(self.pino_tomada_eletrodo10)
+        self.ui.rbtEletrodoEsquerdo_11.clicked.connect(self.pino_tomada_eletrodo11)
+        self.ui.rbtEletrodoEsquerdo_12.clicked.connect(self.pino_tomada_eletrodo12)
 
         self.ui.rbtEletrodo1_E.clicked.connect(self.eletrodo1_clicado)
         self.ui.rbtEletrodo2_E.clicked.connect(self.eletrodo2_clicado)
@@ -86,6 +94,10 @@ class TelaReceitaEsquerda(QDialog):
         self.ui.rbtEletrodo6_E.clicked.connect(self.eletrodo6_clicado)
         self.ui.rbtEletrodo7_E.clicked.connect(self.eletrodo7_clicado)
         self.ui.rbtEletrodo8_E.clicked.connect(self.eletrodo8_clicado)
+        self.ui.rbtEletrodo9_E.clicked.connect(self.eletrodo9_clicado)
+        self.ui.rbtEletrodo10_E.clicked.connect(self.eletrodo10_clicado)
+        self.ui.rbtEletrodo11_E.clicked.connect(self.eletrodo11_clicado)
+        self.ui.rbtEletrodo12_E.clicked.connect(self.eletrodo12_clicado)
 
         self.ui.lbImgEsquerdo.mousePressEvent = self.img_esquerdo_clicado
 
@@ -353,6 +365,14 @@ class TelaReceitaEsquerda(QDialog):
         self.rotina.condutividade_esquerdo[f"ligacao{self.num_ligacao}"][0] = 7 # Atribui pino correspondente
     def conector_esquerdo8(self):
         self.rotina.condutividade_esquerdo[f"ligacao{self.num_ligacao}"][0] = 8 # Atribui pino correspondente
+    def conector_esquerdo9(self):
+        self.rotina.condutividade_esquerdo[f"ligacao{self.num_ligacao}"][0] = 9 # Atribui pino correspondente
+    def conector_esquerdo10(self):
+        self.rotina.condutividade_esquerdo[f"ligacao{self.num_ligacao}"][0] = 10 # Atribui pino correspondente
+    def conector_esquerdo11(self):
+        self.rotina.condutividade_esquerdo[f"ligacao{self.num_ligacao}"][0] = 11 # Atribui pino correspondente
+    def conector_esquerdo12(self):
+        self.rotina.condutividade_esquerdo[f"ligacao{self.num_ligacao}"][0] = 12 # Atribui pino correspondente
 
     def pino_tomada_eletrodo1(self):
         self.rotina.condutividade_esquerdo[f"ligacao{self.num_ligacao}"][2] = 1 # Atribui pino da tomada dos eletrodos
@@ -370,6 +390,14 @@ class TelaReceitaEsquerda(QDialog):
         self.rotina.condutividade_esquerdo[f"ligacao{self.num_ligacao}"][2] = 7 # Atribui pino da tomada dos eletrodos
     def pino_tomada_eletrodo8(self):
         self.rotina.condutividade_esquerdo[f"ligacao{self.num_ligacao}"][2] = 8 # Atribui pino da tomada dos eletrodos
+    def pino_tomada_eletrodo9(self):
+        self.rotina.condutividade_esquerdo[f"ligacao{self.num_ligacao}"][2] = 9 # Atribui pino da tomada dos eletrodos
+    def pino_tomada_eletrodo10(self):
+        self.rotina.condutividade_esquerdo[f"ligacao{self.num_ligacao}"][2] = 10 # Atribui pino da tomada dos eletrodos
+    def pino_tomada_eletrodo11(self):
+        self.rotina.condutividade_esquerdo[f"ligacao{self.num_ligacao}"][2] = 11 # Atribui pino da tomada dos eletrodos
+    def pino_tomada_eletrodo12(self):
+        self.rotina.condutividade_esquerdo[f"ligacao{self.num_ligacao}"][2] = 12 # Atribui pino da tomada dos eletrodos
 
     def eletrodo1_clicado(self):
         self.rotina.condutividade_esquerdo[f"ligacao{self.num_ligacao}"][1][0] = 1        
@@ -386,7 +414,16 @@ class TelaReceitaEsquerda(QDialog):
     def eletrodo7_clicado(self):
         self.rotina.condutividade_esquerdo[f"ligacao{self.num_ligacao}"][1][0] = 7        
     def eletrodo8_clicado(self):
-        self.rotina.condutividade_esquerdo[f"ligacao{self.num_ligacao}"][1][0] = 8        
+        self.rotina.condutividade_esquerdo[f"ligacao{self.num_ligacao}"][1][0] = 8
+
+    def eletrodo9_clicado(self):
+        self.rotina.condutividade_esquerdo[f"ligacao{self.num_ligacao}"][1][0] = 9 
+    def eletrodo10_clicado(self):
+        self.rotina.condutividade_esquerdo[f"ligacao{self.num_ligacao}"][1][0] = 10
+    def eletrodo11_clicado(self):
+        self.rotina.condutividade_esquerdo[f"ligacao{self.num_ligacao}"][1][0] = 11
+    def eletrodo12_clicado(self):
+        self.rotina.condutividade_esquerdo[f"ligacao{self.num_ligacao}"][1][0] = 12
 
     def dieletrico(self):
         if self.rotina.url_img_esquerdo != "" and ( self.check_uma_ligacao()==True):
