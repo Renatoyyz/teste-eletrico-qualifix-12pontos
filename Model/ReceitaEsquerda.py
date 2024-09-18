@@ -387,7 +387,7 @@ class TelaReceitaEsquerda(QDialog):
         
     def seta_direita(self):
         self.num_ligacao+=1
-        if self.num_ligacao >8:
+        if self.num_ligacao >12:
             self.num_ligacao=1
         self.muda_num_ligacao(self.num_ligacao)
         if self.ui.txNomeConexao.text() != "":
@@ -527,8 +527,8 @@ class TelaReceitaEsquerda(QDialog):
                 # ms = "Sim" if self.rotina.condutividade_esquerdo["foi_testado"] == True else "Não"
                 print(f"Foi testado?: {'Sim' if self.rotina.condutividade_esquerdo['foi_testado'] == True else 'Não'}")
                 self.num_ligacao+=1
-                if self.num_ligacao > 8:
-                    self.num_ligacao = 8
+                if self.num_ligacao > 12:
+                    self.num_ligacao = 12
                 self.muda_num_ligacao(self.num_ligacao)
             except:
                 self.ui.txaInformacoes.setText(self.MSG_CONFIG_IMCOMPLETO)
@@ -537,7 +537,7 @@ class TelaReceitaEsquerda(QDialog):
 
     def testa_conexao(self):
         self.ui.txaInformacoes.setText(self.MSG_INFO_TESTANDO)
-        result = self.rotina.teste_esquerdo_direito_condutividade(0)
+        result = self.rotina.teste_esquerdo_direito_condutividade(0)# 0 indica que é o lado esquerdo
         check = False
         for i in range(0,len(result)):
             if result[i][2] == 1 and result[i][1] != "":
@@ -669,7 +669,7 @@ class TelaReceitaEsquerdaDieletrico(QDialog):
 
         self.ui.lbEletrodo12_E.setVisible(False)
         self.ui.lbEletrodo12_E.setParent(self.ui.lbImgEsquerdo) # Seta label para acertar coordenadas
-        
+
 
     def muda_num_ligacao(self, num):
         _translate = QCoreApplication.translate
@@ -847,7 +847,7 @@ class TelaReceitaEsquerdaDieletrico(QDialog):
         if self.ui.txNomeConexao.text() != "":
             self.rotina.isolacao_esquerdo[f"ligacao{self.num_ligacao}"][2] = self.ui.txNomeConexao.text()
             self.num_ligacao+=1
-            if self.cnt_ligacoes >16:
+            if self.cnt_ligacoes >20:
                 self.num_ligacao=1
             self.muda_num_ligacao(self.num_ligacao)
             self.habilita_todos_eletrodos()
@@ -866,7 +866,7 @@ class TelaReceitaEsquerdaDieletrico(QDialog):
         
     def seta_direita(self):
         self.num_ligacao+=1
-        if self.num_ligacao > 24:
+        if self.num_ligacao > 20:
             self.num_ligacao=1
         self.muda_num_ligacao(self.num_ligacao)
         if self.ui.txNomeConexao.text() != "":

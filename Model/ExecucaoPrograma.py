@@ -291,8 +291,8 @@ class TelaExecucao(QDialog):
         cur_obj_tom_conec.setText(str(text))
         # fm = self._translate("TelaExecucao", f"<html><head/><body><p align=\"center\">{text}</p></body></html>")
         cur_obj_tom_conec.setText(self._translate("TelaExecucao", f"{text}"))
-    def muda_cor_obj(self, obj_str, cor):
-    
+
+    def muda_cor_obj(self, obj_str, cor):   
         obj_tom_conec = f"{obj_str}"
         cur_obj_tom_conec = getattr(self.ui, obj_tom_conec)
         cur_obj_tom_conec.setStyleSheet(f"background-color: rgb({cor});")
@@ -842,6 +842,18 @@ class TelaExecucao(QDialog):
         self.ui.lbEletrodo8_D.setVisible(False)
         self.ui.lbEletrodo8_D.setParent(self.ui.lbImgDireito) # Seta label para acertar coordenadas
 
+        self.ui.lbEletrodo9_D.setVisible(False)
+        self.ui.lbEletrodo9_D.setParent(self.ui.lbImgDireito)
+
+        self.ui.lbEletrodo10_D.setVisible(False)
+        self.ui.lbEletrodo10_D.setParent(self.ui.lbImgDireito)
+
+        self.ui.lbEletrodo11_D.setVisible(False)
+        self.ui.lbEletrodo11_D.setParent(self.ui.lbImgDireito)
+
+        self.ui.lbEletrodo12_D.setVisible(False)
+        self.ui.lbEletrodo12_D.setParent(self.ui.lbImgDireito)
+
         self.ui.lbEletrodo1_E.setVisible(False)
         self.ui.lbEletrodo1_E.setParent(self.ui.lbImgEsquerdo) # Seta label para acertar coordenadas
 
@@ -865,6 +877,18 @@ class TelaExecucao(QDialog):
 
         self.ui.lbEletrodo8_E.setVisible(False)
         self.ui.lbEletrodo8_E.setParent(self.ui.lbImgEsquerdo) # Seta label para acertar coordenadas
+
+        self.ui.lbEletrodo9_E.setVisible(False)
+        self.ui.lbEletrodo9_E.setParent(self.ui.lbImgEsquerdo) # Seta label para acertar coordenadas
+
+        self.ui.lbEletrodo10_E.setVisible(False)
+        self.ui.lbEletrodo10_E.setParent(self.ui.lbImgEsquerdo) # Seta label para acertar coordenadas
+
+        self.ui.lbEletrodo11_E.setVisible(False)
+        self.ui.lbEletrodo11_E.setParent(self.ui.lbImgEsquerdo) # Seta label para acertar coordenadas
+
+        self.ui.lbEletrodo12_E.setVisible(False)
+        self.ui.lbEletrodo12_E.setParent(self.ui.lbImgEsquerdo) # Seta label para acertar coordenadas
         
     def desabilita_esquerdo(self):
         if self.habili_desbilita_direito == True:

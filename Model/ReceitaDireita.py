@@ -62,6 +62,10 @@ class TelaReceitaDireita(QDialog):
         self.ui.rbtConecDireito_6.clicked.connect(self.conector_direito6)
         self.ui.rbtConecDireito_7.clicked.connect(self.conector_direito7)
         self.ui.rbtConecDireito_8.clicked.connect(self.conector_direito8)
+        self.ui.rbtConecDireito_9.clicked.connect(self.conector_direito9)
+        self.ui.rbtConecDireito_10.clicked.connect(self.conector_direito10)
+        self.ui.rbtConecDireito_11.clicked.connect(self.conector_direito11)
+        self.ui.rbtConecDireito_12.clicked.connect(self.conector_direito12)
 
         self.ui.rbtEletrodoDireito_1.clicked.connect(self.pino_tomada_eletrodo1)
         self.ui.rbtEletrodoDireito_2.clicked.connect(self.pino_tomada_eletrodo2)
@@ -71,6 +75,10 @@ class TelaReceitaDireita(QDialog):
         self.ui.rbtEletrodoDireito_6.clicked.connect(self.pino_tomada_eletrodo6)
         self.ui.rbtEletrodoDireito_7.clicked.connect(self.pino_tomada_eletrodo7)
         self.ui.rbtEletrodoDireito_8.clicked.connect(self.pino_tomada_eletrodo8)
+        self.ui.rbtEletrodoDireito_9.clicked.connect(self.pino_tomada_eletrodo9)
+        self.ui.rbtEletrodoDireito_10.clicked.connect(self.pino_tomada_eletrodo10)
+        self.ui.rbtEletrodoDireito_11.clicked.connect(self.pino_tomada_eletrodo11)
+        self.ui.rbtEletrodoDireito_12.clicked.connect(self.pino_tomada_eletrodo12)
 
         self.ui.rbtEletrodo1_D.clicked.connect(self.eletrodo1_clicado)
         self.ui.rbtEletrodo2_D.clicked.connect(self.eletrodo2_clicado)
@@ -80,6 +88,10 @@ class TelaReceitaDireita(QDialog):
         self.ui.rbtEletrodo6_D.clicked.connect(self.eletrodo6_clicado)
         self.ui.rbtEletrodo7_D.clicked.connect(self.eletrodo7_clicado)
         self.ui.rbtEletrodo8_D.clicked.connect(self.eletrodo8_clicado)
+        self.ui.rbtEletrodo9_D.clicked.connect(self.eletrodo9_clicado)
+        self.ui.rbtEletrodo10_D.clicked.connect(self.eletrodo10_clicado)
+        self.ui.rbtEletrodo11_D.clicked.connect(self.eletrodo11_clicado)
+        self.ui.rbtEletrodo12_D.clicked.connect(self.eletrodo12_clicado)
 
         self.ui.lbImgDireito.mousePressEvent = self.img_direito_clicado
 
@@ -135,6 +147,22 @@ class TelaReceitaDireita(QDialog):
                 self.ui.lbEletrodo8_D.move( self.rotina.coord_eletrodo_direito[index][0] - self.ui.lbEletrodo8_D.width() // 2,self.rotina.coord_eletrodo_direito[index][1] - self.ui.lbEletrodo8_D.height() // 2)
                 self.ui.lbEletrodo8_D.setVisible(True)
 
+            elif index == 9 and self.rotina.coord_eletrodo_direito[9]!=None:
+                self.ui.lbEletrodo9_D.move( self.rotina.coord_eletrodo_direito[index][0] - self.ui.lbEletrodo9_D.width() // 2,self.rotina.coord_eletrodo_direito[index][1] - self.ui.lbEletrodo9_D.height() // 2)
+                self.ui.lbEletrodo9_D.setVisible(True)
+
+            elif index == 10 and self.rotina.coord_eletrodo_direito[10]!=None:
+                self.ui.lbEletrodo10_D.move( self.rotina.coord_eletrodo_direito[index][0] - self.ui.lbEletrodo10_D.width() // 2,self.rotina.coord_eletrodo_direito[index][1] - self.ui.lbEletrodo10_D.height() // 2)
+                self.ui.lbEletrodo10_D.setVisible(True)
+
+            elif index == 11 and self.rotina.coord_eletrodo_direito[11]!=None:
+                self.ui.lbEletrodo11_D.move( self.rotina.coord_eletrodo_direito[index][0] - self.ui.lbEletrodo11_D.width() // 2,self.rotina.coord_eletrodo_direito[index][1] - self.ui.lbEletrodo11_D.height() // 2)
+                self.ui.lbEletrodo11_D.setVisible(True)
+
+            elif index == 12 and self.rotina.coord_eletrodo_direito[12]!=None:
+                self.ui.lbEletrodo12_D.move( self.rotina.coord_eletrodo_direito[index][0] - self.ui.lbEletrodo12_D.width() // 2,self.rotina.coord_eletrodo_direito[index][1] - self.ui.lbEletrodo12_D.height() // 2)
+                self.ui.lbEletrodo12_D.setVisible(True)
+
     def limpaeletrodo(self):
         self.ui.lbEletrodo1_D.setVisible(False)
         self.ui.lbEletrodo1_D.setParent(self.ui.lbImgDireito) # Seta label para acertar coordenadas
@@ -159,6 +187,18 @@ class TelaReceitaDireita(QDialog):
 
         self.ui.lbEletrodo8_D.setVisible(False)
         self.ui.lbEletrodo8_D.setParent(self.ui.lbImgDireito) # Seta label para acertar coordenadas
+
+        self.ui.lbEletrodo9_D.setVisible(False)
+        self.ui.lbEletrodo9_D.setParent(self.ui.lbImgDireito)
+
+        self.ui.lbEletrodo10_D.setVisible(False)
+        self.ui.lbEletrodo10_D.setParent(self.ui.lbImgDireito)
+
+        self.ui.lbEletrodo11_D.setVisible(False)
+        self.ui.lbEletrodo11_D.setParent(self.ui.lbImgDireito)
+
+        self.ui.lbEletrodo12_D.setVisible(False)
+        self.ui.lbEletrodo12_D.setParent(self.ui.lbImgDireito)
 
     def limpar_eletrodo_escolhido(self):
         index = 0
@@ -193,6 +233,23 @@ class TelaReceitaDireita(QDialog):
         elif self.ui.rbtEletrodo8_D.isChecked() == True:
             self.ui.lbEletrodo8_D.setVisible(False)
             index = 8
+        
+        elif self.ui.rbtEletrodo9_D.isChecked() == True:
+            self.ui.lbEletrodo9_D.setVisible(False)
+            index = 9
+
+        elif self.ui.rbtEletrodo10_D.isChecked() == True:
+            self.ui.lbEletrodo10_D.setVisible(False)
+            index = 10
+        
+        elif self.ui.rbtEletrodo11_D.isChecked() == True:
+            self.ui.lbEletrodo11_D.setVisible(False)
+            index = 11
+
+        elif self.ui.rbtEletrodo12_D.isChecked() == True:
+            self.ui.lbEletrodo12_D.setVisible(False)
+            index = 12
+
 
         self.limpa_buffer_coordenadas(index)
         print(self.rotina.coord_eletrodo_direito)
@@ -239,6 +296,14 @@ class TelaReceitaDireita(QDialog):
             self.posiciona_eletrodo(event, 7)
         elif self.ui.rbtEletrodo8_D.isChecked() == True:
             self.posiciona_eletrodo(event, 8)
+        elif self.ui.rbtEletrodo9_D.isChecked() == True:
+            self.posiciona_eletrodo(event, 9)
+        elif self.ui.rbtEletrodo10_D.isChecked() == True:
+            self.posiciona_eletrodo(event, 10)
+        elif self.ui.rbtEletrodo11_D.isChecked() == True:
+            self.posiciona_eletrodo(event, 11)
+        elif self.ui.rbtEletrodo12_D.isChecked() == True:
+            self.posiciona_eletrodo(event, 12)
 
     def posiciona_eletrodo(self, event, indice):
         # Obter posição do clique dentro de self.lbImgDireito
@@ -275,6 +340,14 @@ class TelaReceitaDireita(QDialog):
             return 7
         elif self.ui.rbtEletrodo8_D.isChecked() == True:
             return 8
+        elif self.ui.rbtEletrodo9_D.isChecked() == True:
+            return 9
+        elif self.ui.rbtEletrodo10_D.isChecked() == True:
+            return 10
+        elif self.ui.rbtEletrodo11_D.isChecked() == True:
+            return 11
+        elif self.ui.rbtEletrodo12_D.isChecked() == True:
+            return 12
         else:
             return 0
         
@@ -293,7 +366,7 @@ class TelaReceitaDireita(QDialog):
         
     def seta_direita(self):
         self.num_ligacao+=1
-        if self.num_ligacao >8:
+        if self.num_ligacao >12:
             self.num_ligacao=1
         self.muda_num_ligacao(self.num_ligacao)
         if self.ui.txNomeConexao.text() != "":
@@ -331,6 +404,14 @@ class TelaReceitaDireita(QDialog):
         self.rotina.condutividade_direito[f"ligacao{self.num_ligacao}"][0] = 7 # Atribui pino correspondente
     def conector_direito8(self):
         self.rotina.condutividade_direito[f"ligacao{self.num_ligacao}"][0] = 8 # Atribui pino correspondente
+    def conector_direito9(self):
+        self.rotina.condutividade_direito[f"ligacao{self.num_ligacao}"][0] = 9
+    def conector_direito10(self):
+        self.rotina.condutividade_direito[f"ligacao{self.num_ligacao}"][0] = 10
+    def conector_direito11(self):
+        self.rotina.condutividade_direito[f"ligacao{self.num_ligacao}"][0] = 11
+    def conector_direito12(self):
+        self.rotina.condutividade_direito[f"ligacao{self.num_ligacao}"][0] = 12
 
     def pino_tomada_eletrodo1(self):
         self.rotina.condutividade_direito[f"ligacao{self.num_ligacao}"][2] = 1 # Atribui pino da tomada dos eletrodos
@@ -348,6 +429,14 @@ class TelaReceitaDireita(QDialog):
         self.rotina.condutividade_direito[f"ligacao{self.num_ligacao}"][2] = 7 # Atribui pino da tomada dos eletrodos
     def pino_tomada_eletrodo8(self):
         self.rotina.condutividade_direito[f"ligacao{self.num_ligacao}"][2] = 8 # Atribui pino da tomada dos eletrodos
+    def pino_tomada_eletrodo9(self):
+        self.rotina.condutividade_direito[f"ligacao{self.num_ligacao}"][2] = 9
+    def pino_tomada_eletrodo10(self):
+        self.rotina.condutividade_direito[f"ligacao{self.num_ligacao}"][2] = 10
+    def pino_tomada_eletrodo11(self):
+        self.rotina.condutividade_direito[f"ligacao{self.num_ligacao}"][2] = 11
+    def pino_tomada_eletrodo12(self):
+        self.rotina.condutividade_direito[f"ligacao{self.num_ligacao}"][2] = 12
 
     def eletrodo1_clicado(self):
         self.rotina.condutividade_direito[f"ligacao{self.num_ligacao}"][1][0] = 1        
@@ -364,7 +453,16 @@ class TelaReceitaDireita(QDialog):
     def eletrodo7_clicado(self):
         self.rotina.condutividade_direito[f"ligacao{self.num_ligacao}"][1][0] = 7        
     def eletrodo8_clicado(self):
-        self.rotina.condutividade_direito[f"ligacao{self.num_ligacao}"][1][0] = 8   
+        self.rotina.condutividade_direito[f"ligacao{self.num_ligacao}"][1][0] = 8
+    def eletrodo9_clicado(self):
+        self.rotina.condutividade_direito[f"ligacao{self.num_ligacao}"][1][0] = 9
+    def eletrodo10_clicado(self):
+        self.rotina.condutividade_direito[f"ligacao{self.num_ligacao}"][1][0] = 10
+    def eletrodo11_clicado(self):
+        self.rotina.condutividade_direito[f"ligacao{self.num_ligacao}"][1][0] = 11
+    def eletrodo12_clicado(self):
+        self.rotina.condutividade_direito[f"ligacao{self.num_ligacao}"][1][0] = 12
+
 
     def dieletrico(self):
         if self.rotina.url_img_direito != "" and ( self.check_uma_ligacao()==True):
@@ -376,7 +474,7 @@ class TelaReceitaDireita(QDialog):
     def check_uma_ligacao(self):
         cnt_ligacao=0
         for index in range(len(self.rotina.condutividade_direito)+1):
-            if index >= 8:
+            if index >= 12:
                 return False
             if self.rotina.condutividade_direito[f"ligacao{index+1}"][3] != "":
                 cnt_ligacao +=1
@@ -401,11 +499,15 @@ class TelaReceitaDireita(QDialog):
                 print(f"Ligação 6: {self.rotina.condutividade_direito['ligacao6']}")
                 print(f"Ligação 7: {self.rotina.condutividade_direito['ligacao7']}")
                 print(f"Ligação 8: {self.rotina.condutividade_direito['ligacao8']}")
+                print(f"Ligação 9: {self.rotina.condutividade_direito['ligacao9']}")
+                print(f"Ligação 10: {self.rotina.condutividade_direito['ligacao10']}")
+                print(f"Ligação 11: {self.rotina.condutividade_direito['ligacao11']}")
+                print(f"Ligação 12: {self.rotina.condutividade_direito['ligacao12']}")
                 # ms = "Sim" if self.rotina.condutividade_direito["foi_testado"] == True else "Não"
                 print(f"Foi testado?: {'Sim' if self.rotina.condutividade_direito['foi_testado'] == True else 'Não'}")
                 self.num_ligacao+=1
-                if self.num_ligacao > 8:
-                    self.num_ligacao = 8
+                if self.num_ligacao > 12:
+                    self.num_ligacao = 12
                 self.muda_num_ligacao(self.num_ligacao)
             except:
                 self.ui.txaInformacoes.setText(self.MSG_CONFIG_IMCOMPLETO)
@@ -490,6 +592,10 @@ class TelaReceitaDireitaDieletrico(QDialog):
         self.ui.cbxEletrodo6_D.clicked.connect(self.cbx_clicado_6)
         self.ui.cbxEletrodo7_D.clicked.connect(self.cbx_clicado_7)
         self.ui.cbxEletrodo8_D.clicked.connect(self.cbx_clicado_8)
+        self.ui.cbxEletrodo9_D.clicked.connect(self.cbx_clicado_9)
+        self.ui.cbxEletrodo10_D.clicked.connect(self.cbx_clicado_10)
+        self.ui.cbxEletrodo11_D.clicked.connect(self.cbx_clicado_11)
+        self.ui.cbxEletrodo12_D.clicked.connect(self.cbx_clicado_12)
 
         self.ui.btAdicionar.clicked.connect(self.adicionar_ligacao_eletrodo)
         self.ui.btSetaDir.clicked.connect(self.seta_direita)
@@ -532,6 +638,18 @@ class TelaReceitaDireitaDieletrico(QDialog):
         self.ui.lbEletrodo8_D.setVisible(False)
         self.ui.lbEletrodo8_D.setParent(self.ui.lbImgDireito) # Seta label para acertar coordenadas
 
+        self.ui.lbEletrodo9_D.setVisible(False)
+        self.ui.lbEletrodo9_D.setParent(self.ui.lbImgDireito)
+
+        self.ui.lbEletrodo10_D.setVisible(False)
+        self.ui.lbEletrodo10_D.setParent(self.ui.lbImgDireito)
+
+        self.ui.lbEletrodo11_D.setVisible(False)
+        self.ui.lbEletrodo11_D.setParent(self.ui.lbImgDireito)
+
+        self.ui.lbEletrodo12_D.setVisible(False)
+        self.ui.lbEletrodo12_D.setParent(self.ui.lbImgDireito)
+
     def muda_num_ligacao(self, num):
         _translate = QCoreApplication.translate
         self.ui.lbNumLigacao.setText(_translate("TelaReceitaDireita", f"<html><head/><body><p align=\"center\"><span style=\" font-size:20pt;\">{str(num)}</span></p></body></html>"))
@@ -556,6 +674,14 @@ class TelaReceitaDireitaDieletrico(QDialog):
         self.carre_eletrodo_clicado(7)
     def cbx_clicado_8(self):
         self.carre_eletrodo_clicado(8)
+    def cbx_clicado_9(self):
+        self.carre_eletrodo_clicado(9)
+    def cbx_clicado_10(self):
+        self.carre_eletrodo_clicado(10)
+    def cbx_clicado_11(self):
+        self.carre_eletrodo_clicado(11)
+    def cbx_clicado_12(self):
+        self.carre_eletrodo_clicado(12)
 
     def carre_eletrodo_clicado(self, eletrodo):
         self.cnt_ligacoes+=1
@@ -564,7 +690,7 @@ class TelaReceitaDireitaDieletrico(QDialog):
         eletrodo_clicado = eletrodo
         if posi == 0:
             # Procura o pino da 'tomada de conector' da peça correspondente ao eletrodo n
-            for i in range(1,9):
+            for i in range(1,13):
                 if self.rotina.condutividade_direito[f"ligacao{i}"][1][0] == eletrodo_clicado: # se for igual ao eletrodo n
                     valor_pino = self.rotina.condutividade_direito[f"ligacao{i}"][0] # associa conector correspondente
                     self.rotina.isolacao_direito[f"ligacao{self.num_ligacao}"][posi]= valor_pino
@@ -572,7 +698,7 @@ class TelaReceitaDireitaDieletrico(QDialog):
                     break
         else:
             # Procura o pino da 'tomada de eletrodo' da peça correspondente ao eletrodo n
-            for i in range(1,9):
+            for i in range(1,13):
                 if self.rotina.condutividade_direito[f"ligacao{i}"][1][0] == eletrodo_clicado:
                     valor_pino = self.rotina.condutividade_direito[f"ligacao{i}"][2]
                     self.rotina.isolacao_direito[f"ligacao{self.num_ligacao}"][posi]= valor_pino
@@ -584,7 +710,7 @@ class TelaReceitaDireitaDieletrico(QDialog):
 
     def desabilita_eletrodos(self):
 
-        for i in range(1,9):
+        for i in range(1,13):
             obj_tom_conec = f"cbxEletrodo{i}_D"
             cur_obj_tom_conec = getattr(self.ui, obj_tom_conec)
             # if cur_obj_tom_conec.isChecked() == False:
@@ -608,6 +734,14 @@ class TelaReceitaDireitaDieletrico(QDialog):
         self.ui.cbxEletrodo7_D.setChecked(False)
         self.ui.cbxEletrodo8_D.setEnabled(True)
         self.ui.cbxEletrodo8_D.setChecked(False)
+        self.ui.cbxEletrodo9_D.setEnabled(True)
+        self.ui.cbxEletrodo9_D.setChecked(False)
+        self.ui.cbxEletrodo10_D.setEnabled(True)
+        self.ui.cbxEletrodo10_D.setChecked(False)
+        self.ui.cbxEletrodo11_D.setEnabled(True)
+        self.ui.cbxEletrodo11_D.setChecked(False)
+        self.ui.cbxEletrodo12_D.setEnabled(True)
+        self.ui.cbxEletrodo12_D.setChecked(False)
 
         self.cnt_ligacoes = 0
 
@@ -654,6 +788,22 @@ class TelaReceitaDireitaDieletrico(QDialog):
                 self.ui.lbEletrodo8_D.move( self.rotina.coord_eletrodo_direito[index][0] - self.ui.lbEletrodo8_D.width() // 2,self.rotina.coord_eletrodo_direito[index][1] - self.ui.lbEletrodo8_D.height() // 2)
                 self.ui.lbEletrodo8_D.setVisible(True)
 
+            elif index == 9 and self.rotina.coord_eletrodo_direito[9]!=None:
+                self.ui.lbEletrodo9_D.move( self.rotina.coord_eletrodo_direito[index][0] - self.ui.lbEletrodo9_D.width() // 2,self.rotina.coord_eletrodo_direito[index][1] - self.ui.lbEletrodo9_D.height() // 2)
+                self.ui.lbEletrodo9_D.setVisible(True)
+
+            elif index == 10 and self.rotina.coord_eletrodo_direito[10]!=None:
+                self.ui.lbEletrodo10_D.move( self.rotina.coord_eletrodo_direito[index][0] - self.ui.lbEletrodo10_D.width() // 2,self.rotina.coord_eletrodo_direito[index][1] - self.ui.lbEletrodo10_D.height() // 2)
+                self.ui.lbEletrodo10_D.setVisible(True)
+
+            elif index == 11 and self.rotina.coord_eletrodo_direito[11]!=None:
+                self.ui.lbEletrodo11_D.move( self.rotina.coord_eletrodo_direito[index][0] - self.ui.lbEletrodo11_D.width() // 2,self.rotina.coord_eletrodo_direito[index][1] - self.ui.lbEletrodo11_D.height() // 2)
+                self.ui.lbEletrodo11_D.setVisible(True)
+
+            elif index == 12 and self.rotina.coord_eletrodo_direito[12]!=None:
+                self.ui.lbEletrodo12_D.move( self.rotina.coord_eletrodo_direito[index][0] - self.ui.lbEletrodo12_D.width() // 2,self.rotina.coord_eletrodo_direito[index][1] - self.ui.lbEletrodo12_D.height() // 2)
+                self.ui.lbEletrodo12_D.setVisible(True)
+
     def carregar_img(self):
         dir_open = OpenFile(dado=self.dado, io=self.io, db=self.database)
         if self.rotina.url_img_direito == "":
@@ -676,7 +826,7 @@ class TelaReceitaDireitaDieletrico(QDialog):
         if self.ui.txNomeConexao.text() != "":
             self.rotina.isolacao_direito[f"ligacao{self.num_ligacao}"][2] = self.ui.txNomeConexao.text()
             self.num_ligacao+=1
-            if self.cnt_ligacoes >16:
+            if self.cnt_ligacoes >20:
                 self.num_ligacao=1
             self.muda_num_ligacao(self.num_ligacao)
             self.habilita_todos_eletrodos()
@@ -695,7 +845,7 @@ class TelaReceitaDireitaDieletrico(QDialog):
         
     def seta_direita(self):
         self.num_ligacao+=1
-        if self.num_ligacao >16:
+        if self.num_ligacao >20:
             self.num_ligacao=1
         self.muda_num_ligacao(self.num_ligacao)
         if self.ui.txNomeConexao.text() != "":
@@ -716,7 +866,7 @@ class TelaReceitaDireitaDieletrico(QDialog):
         cur_obj_obj_eletrodo_1.setEnabled(False)
         cur_obj_obj_eletrodo_2.setEnabled(True)
         
-        for i in range(1,9):
+        for i in range(1,13):
             if i!= self.rotina.isolacao_direito[f'ligacao{num}'][3] and i!= self.rotina.isolacao_direito[f'ligacao{num}'][4]:
                 cur_obj_obj_eletrodo = getattr(self.ui, f"cbxEletrodo{i}_D")
                 cur_obj_obj_eletrodo.setChecked(False)
@@ -726,7 +876,7 @@ class TelaReceitaDireitaDieletrico(QDialog):
                 cur_obj_obj_eletrodo.setEnabled(False)
 
     def limpar_eletrodos_refazer(self):
-        for i in range(1,9):
+        for i in range(1,13):
             cur_obj_obj_eletrodo = getattr(self.ui, f"cbxEletrodo{i}_D")
             cur_obj_obj_eletrodo.setChecked(False)
             cur_obj_obj_eletrodo.setEnabled(True)
