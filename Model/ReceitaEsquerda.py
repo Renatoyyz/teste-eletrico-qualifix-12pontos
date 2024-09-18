@@ -98,7 +98,7 @@ class TelaReceitaEsquerda(QDialog):
         self.ui.rbtEletrodo10_E.clicked.connect(self.eletrodo10_clicado)
         self.ui.rbtEletrodo11_E.clicked.connect(self.eletrodo11_clicado)
         self.ui.rbtEletrodo12_E.clicked.connect(self.eletrodo12_clicado)
-
+        
         self.ui.lbImgEsquerdo.mousePressEvent = self.img_esquerdo_clicado
 
         self.ui.txNomeConexao.mousePressEvent = self.nome_conexao_clicado
@@ -154,6 +154,22 @@ class TelaReceitaEsquerda(QDialog):
                 self.ui.lbEletrodo8_E.move( self.rotina.coord_eletrodo_esquerdo[index][0] - self.ui.lbEletrodo8_E.width() // 2,self.rotina.coord_eletrodo_esquerdo[index][1] - self.ui.lbEletrodo8_E.height() // 2)
                 self.ui.lbEletrodo8_E.setVisible(True)
 
+            elif index == 9 and self.rotina.coord_eletrodo_esquerdo[9]!=None:
+                self.ui.lbEletrodo9_E.move( self.rotina.coord_eletrodo_esquerdo[index][0] - self.ui.lbEletrodo9_E.width() // 2,self.rotina.coord_eletrodo_esquerdo[index][1] - self.ui.lbEletrodo9_E.height() // 2)
+                self.ui.lbEletrodo9_E.setVisible(True)
+
+            elif index == 10 and self.rotina.coord_eletrodo_esquerdo[10]!=None:
+                self.ui.lbEletrodo10_E.move( self.rotina.coord_eletrodo_esquerdo[index][0] - self.ui.lbEletrodo10_E.width() // 2,self.rotina.coord_eletrodo_esquerdo[index][1] - self.ui.lbEletrodo10_E.height() // 2)
+                self.ui.lbEletrodo10_E.setVisible(True)
+
+            elif index == 11 and self.rotina.coord_eletrodo_esquerdo[11]!=None:
+                self.ui.lbEletrodo11_E.move( self.rotina.coord_eletrodo_esquerdo[index][0] - self.ui.lbEletrodo11_E.width() // 2,self.rotina.coord_eletrodo_esquerdo[index][1] - self.ui.lbEletrodo11_E.height() // 2)
+                self.ui.lbEletrodo11_E.setVisible(True)
+
+            elif index == 12 and self.rotina.coord_eletrodo_esquerdo[12]!=None:
+                self.ui.lbEletrodo12_E.move( self.rotina.coord_eletrodo_esquerdo[index][0] - self.ui.lbEletrodo12_E.width() // 2,self.rotina.coord_eletrodo_esquerdo[index][1] - self.ui.lbEletrodo12_E.height() // 2)
+                self.ui.lbEletrodo12_E.setVisible(True)
+
 
     def limpaeletrodo(self):
         self.ui.lbEletrodo1_E.setVisible(False)
@@ -179,6 +195,18 @@ class TelaReceitaEsquerda(QDialog):
 
         self.ui.lbEletrodo8_E.setVisible(False)
         self.ui.lbEletrodo8_E.setParent(self.ui.lbImgEsquerdo) # Seta label para acertar coordenadas
+
+        self.ui.lbEletrodo9_E.setVisible(False)
+        self.ui.lbEletrodo9_E.setParent(self.ui.lbImgEsquerdo) # Seta label para acertar coordenadas
+
+        self.ui.lbEletrodo10_E.setVisible(False)
+        self.ui.lbEletrodo10_E.setParent(self.ui.lbImgEsquerdo) # Seta label para acertar coordenadas
+
+        self.ui.lbEletrodo11_E.setVisible(False)
+        self.ui.lbEletrodo11_E.setParent(self.ui.lbImgEsquerdo) # Seta label para acertar coordenadas
+
+        self.ui.lbEletrodo12_E.setVisible(False)
+        self.ui.lbEletrodo12_E.setParent(self.ui.lbImgEsquerdo) # Seta label para acertar coordenadas
 
     def limpar_eletrodo_escolhido(self):
         index = 0
@@ -213,6 +241,23 @@ class TelaReceitaEsquerda(QDialog):
         elif self.ui.rbtEletrodo8_E.isChecked() == True:
             self.ui.lbEletrodo8_E.setVisible(False)
             index = 8
+
+        elif self.ui.rbtEletrodo9_E.isChecked() == True:
+            self.ui.lbEletrodo9_E.setVisible(False)
+            index = 9
+
+        elif self.ui.rbtEletrodo10_E.isChecked() == True:
+            self.ui.lbEletrodo10_E.setVisible(False)
+            index = 10
+
+        elif self.ui.rbtEletrodo11_E.isChecked() == True:
+            self.ui.lbEletrodo11_E.setVisible(False)
+            index = 11
+
+        elif self.ui.rbtEletrodo12_E.isChecked() == True:
+            self.ui.lbEletrodo12_E.setVisible(False)
+            index = 12
+
 
         self.limpa_buffer_coordenadas(index)
         print(self.rotina.coord_eletrodo_esquerdo)
@@ -267,6 +312,14 @@ class TelaReceitaEsquerda(QDialog):
             self.posiciona_eletrodo(event, 7)
         elif self.ui.rbtEletrodo8_E.isChecked() == True:
             self.posiciona_eletrodo(event, 8)
+        elif self.ui.rbtEletrodo9_E.isChecked() == True:
+            self.posiciona_eletrodo(event, 9)
+        elif self.ui.rbtEletrodo10_E.isChecked() == True:
+            self.posiciona_eletrodo(event, 10)
+        elif self.ui.rbtEletrodo11_E.isChecked() == True:
+            self.posiciona_eletrodo(event, 11)
+        elif self.ui.rbtEletrodo12_E.isChecked() == True:
+            self.posiciona_eletrodo(event, 12)
 
 
     def posiciona_eletrodo(self, event, indice):
@@ -307,6 +360,14 @@ class TelaReceitaEsquerda(QDialog):
             return 7
         elif self.ui.rbtEletrodo8_E.isChecked() == True:
             return 8
+        elif self.ui.rbtEletrodo9_E.isChecked() == True:
+            return 9
+        elif self.ui.rbtEletrodo10_E.isChecked() == True:
+            return 10
+        elif self.ui.rbtEletrodo11_E.isChecked() == True:
+            return 11
+        elif self.ui.rbtEletrodo12_E.isChecked() == True:
+            return 12
         else:
             return 0
 
@@ -415,7 +476,6 @@ class TelaReceitaEsquerda(QDialog):
         self.rotina.condutividade_esquerdo[f"ligacao{self.num_ligacao}"][1][0] = 7        
     def eletrodo8_clicado(self):
         self.rotina.condutividade_esquerdo[f"ligacao{self.num_ligacao}"][1][0] = 8
-
     def eletrodo9_clicado(self):
         self.rotina.condutividade_esquerdo[f"ligacao{self.num_ligacao}"][1][0] = 9 
     def eletrodo10_clicado(self):
@@ -435,7 +495,7 @@ class TelaReceitaEsquerda(QDialog):
     def check_uma_ligacao(self):
         cnt_ligacao=0
         for index in range(len(self.rotina.condutividade_esquerdo)+1):
-            if index >= 8:
+            if index >= 12:
                 return False
             if self.rotina.condutividade_esquerdo[f"ligacao{index+1}"][3] != "":
                 cnt_ligacao +=1
@@ -460,6 +520,10 @@ class TelaReceitaEsquerda(QDialog):
                 print(f"Ligação 6: {self.rotina.condutividade_esquerdo['ligacao6']}")
                 print(f"Ligação 7: {self.rotina.condutividade_esquerdo['ligacao7']}")
                 print(f"Ligação 8: {self.rotina.condutividade_esquerdo['ligacao8']}")
+                print(f"Ligação 9: {self.rotina.condutividade_esquerdo['ligacao9']}")
+                print(f"Ligação 10: {self.rotina.condutividade_esquerdo['ligacao10']}")
+                print(f"Ligação 11: {self.rotina.condutividade_esquerdo['ligacao11']}")
+                print(f"Ligação 12: {self.rotina.condutividade_esquerdo['ligacao12']}")
                 # ms = "Sim" if self.rotina.condutividade_esquerdo["foi_testado"] == True else "Não"
                 print(f"Foi testado?: {'Sim' if self.rotina.condutividade_esquerdo['foi_testado'] == True else 'Não'}")
                 self.num_ligacao+=1
@@ -547,6 +611,10 @@ class TelaReceitaEsquerdaDieletrico(QDialog):
         self.ui.cbxEletrodo6_E.clicked.connect(self.cbx_clicado_6)
         self.ui.cbxEletrodo7_E.clicked.connect(self.cbx_clicado_7)
         self.ui.cbxEletrodo8_E.clicked.connect(self.cbx_clicado_8)
+        self.ui.cbxEletrodo9_E.clicked.connect(self.cbx_clicado_9)
+        self.ui.cbxEletrodo10_E.clicked.connect(self.cbx_clicado_10)
+        self.ui.cbxEletrodo11_E.clicked.connect(self.cbx_clicado_11)
+        self.ui.cbxEletrodo12_E.clicked.connect(self.cbx_clicado_12)
 
         self.ui.btAdicionar.clicked.connect(self.adicionar_ligacao_eletrodo)
         self.ui.btSetaDir.clicked.connect(self.seta_direita)
@@ -590,6 +658,19 @@ class TelaReceitaEsquerdaDieletrico(QDialog):
         self.ui.lbEletrodo8_E.setVisible(False)
         self.ui.lbEletrodo8_E.setParent(self.ui.lbImgEsquerdo) # Seta label para acertar coordenadas
 
+        self.ui.lbEletrodo9_E.setVisible(False)
+        self.ui.lbEletrodo9_E.setParent(self.ui.lbImgEsquerdo) # Seta label para acertar coordenadas
+
+        self.ui.lbEletrodo10_E.setVisible(False)
+        self.ui.lbEletrodo10_E.setParent(self.ui.lbImgEsquerdo) # Seta label para acertar coordenadas
+
+        self.ui.lbEletrodo11_E.setVisible(False)
+        self.ui.lbEletrodo11_E.setParent(self.ui.lbImgEsquerdo) # Seta label para acertar coordenadas   
+
+        self.ui.lbEletrodo12_E.setVisible(False)
+        self.ui.lbEletrodo12_E.setParent(self.ui.lbImgEsquerdo) # Seta label para acertar coordenadas
+        
+
     def muda_num_ligacao(self, num):
         _translate = QCoreApplication.translate
         self.ui.lbNumLigacao.setText(_translate("TelaReceitaEsquerda", f"<html><head/><body><p align=\"center\"><span style=\" font-size:20pt;\">{str(num)}</span></p></body></html>"))
@@ -614,6 +695,14 @@ class TelaReceitaEsquerdaDieletrico(QDialog):
         self.carre_eletrodo_clicado(7)
     def cbx_clicado_8(self):
         self.carre_eletrodo_clicado(8)
+    def cbx_clicado_9(self):
+        self.carre_eletrodo_clicado(9)
+    def cbx_clicado_10(self):
+        self.carre_eletrodo_clicado(10)
+    def cbx_clicado_11(self):
+        self.carre_eletrodo_clicado(11)
+    def cbx_clicado_12(self):
+        self.carre_eletrodo_clicado(12)
 
     def carre_eletrodo_clicado(self, eletrodo):
         self.cnt_ligacoes+=1
@@ -622,7 +711,7 @@ class TelaReceitaEsquerdaDieletrico(QDialog):
         eletrodo_clicado = eletrodo
         if posi == 0:
             # Procura o pino da 'tomada de conector' da peça correspondente ao eletrodo n
-            for i in range(1,9):
+            for i in range(1,13):
                 if self.rotina.condutividade_esquerdo[f"ligacao{i}"][1][0] == eletrodo_clicado: # se for igual ao eletrodo n
                     valor_pino = self.rotina.condutividade_esquerdo[f"ligacao{i}"][0] # associa conector correspondente
                     self.rotina.isolacao_esquerdo[f"ligacao{self.num_ligacao}"][posi]= valor_pino
@@ -630,7 +719,7 @@ class TelaReceitaEsquerdaDieletrico(QDialog):
                     break
         else:
             # Procura o pino da 'tomada de eletrodo' da peça correspondente ao eletrodo n
-            for i in range(1,9):
+            for i in range(1,13):
                 if self.rotina.condutividade_esquerdo[f"ligacao{i}"][1][0] == eletrodo_clicado:
                     valor_pino = self.rotina.condutividade_esquerdo[f"ligacao{i}"][2]
                     self.rotina.isolacao_esquerdo[f"ligacao{self.num_ligacao}"][posi]= valor_pino
@@ -643,7 +732,7 @@ class TelaReceitaEsquerdaDieletrico(QDialog):
 
     def desabilita_eletrodos(self):
 
-        for i in range(1,9):
+        for i in range(1,13):
             obj_tom_conec = f"cbxEletrodo{i}_E"
             cur_obj_tom_conec = getattr(self.ui, obj_tom_conec)
             # if cur_obj_tom_conec.isChecked() == False:
@@ -667,6 +756,14 @@ class TelaReceitaEsquerdaDieletrico(QDialog):
         self.ui.cbxEletrodo7_E.setChecked(False)
         self.ui.cbxEletrodo8_E.setEnabled(True)
         self.ui.cbxEletrodo8_E.setChecked(False)
+        self.ui.cbxEletrodo9_E.setEnabled(True)
+        self.ui.cbxEletrodo9_E.setChecked(False)
+        self.ui.cbxEletrodo10_E.setEnabled(True)
+        self.ui.cbxEletrodo10_E.setChecked(False)
+        self.ui.cbxEletrodo11_E.setEnabled(True)
+        self.ui.cbxEletrodo11_E.setChecked(False)
+        self.ui.cbxEletrodo12_E.setEnabled(True)
+        self.ui.cbxEletrodo12_E.setChecked(False)
 
         self.cnt_ligacoes = 0
 
@@ -708,6 +805,22 @@ class TelaReceitaEsquerdaDieletrico(QDialog):
             elif index == 8 and self.rotina.coord_eletrodo_esquerdo[8]!=None:
                 self.ui.lbEletrodo8_E.move( self.rotina.coord_eletrodo_esquerdo[index][0] - self.ui.lbEletrodo8_E.width() // 2,self.rotina.coord_eletrodo_esquerdo[index][1] - self.ui.lbEletrodo8_E.height() // 2)
                 self.ui.lbEletrodo8_E.setVisible(True)
+
+            elif index == 9 and self.rotina.coord_eletrodo_esquerdo[9]!=None:
+                self.ui.lbEletrodo9_E.move( self.rotina.coord_eletrodo_esquerdo[index][0] - self.ui.lbEletrodo9_E.width() // 2,self.rotina.coord_eletrodo_esquerdo[index][1] - self.ui.lbEletrodo9_E.height() // 2)
+                self.ui.lbEletrodo9_E.setVisible(True)
+
+            elif index == 10 and self.rotina.coord_eletrodo_esquerdo[10]!=None:
+                self.ui.lbEletrodo10_E.move( self.rotina.coord_eletrodo_esquerdo[index][0] - self.ui.lbEletrodo10_E.width() // 2,self.rotina.coord_eletrodo_esquerdo[index][1] - self.ui.lbEletrodo10_E.height() // 2)
+                self.ui.lbEletrodo10_E.setVisible(True)
+
+            elif index == 11 and self.rotina.coord_eletrodo_esquerdo[11]!=None:
+                self.ui.lbEletrodo11_E.move( self.rotina.coord_eletrodo_esquerdo[index][0] - self.ui.lbEletrodo11_E.width() // 2,self.rotina.coord_eletrodo_esquerdo[index][1] - self.ui.lbEletrodo11_E.height() // 2)
+                self.ui.lbEletrodo11_E.setVisible(True)
+
+            elif index == 12 and self.rotina.coord_eletrodo_esquerdo[12]!=None:
+                self.ui.lbEletrodo12_E.move( self.rotina.coord_eletrodo_esquerdo[index][0] - self.ui.lbEletrodo12_E.width() // 2,self.rotina.coord_eletrodo_esquerdo[index][1] - self.ui.lbEletrodo12_E.height() // 2)
+                self.ui.lbEletrodo12_E.setVisible(True)
 
     def carregar_img(self):
         dir_open = OpenFile(dado=self.dado, io=self.io, db=self.database)
@@ -753,7 +866,7 @@ class TelaReceitaEsquerdaDieletrico(QDialog):
         
     def seta_direita(self):
         self.num_ligacao+=1
-        if self.num_ligacao >16:
+        if self.num_ligacao > 24:
             self.num_ligacao=1
         self.muda_num_ligacao(self.num_ligacao)
         if self.ui.txNomeConexao.text() != "":
@@ -774,7 +887,7 @@ class TelaReceitaEsquerdaDieletrico(QDialog):
         cur_obj_obj_eletrodo_1.setEnabled(False)
         cur_obj_obj_eletrodo_2.setEnabled(True)
         
-        for i in range(1,9):
+        for i in range(1,13):
             if i!= self.rotina.isolacao_esquerdo[f'ligacao{num}'][3] and i!= self.rotina.isolacao_esquerdo[f'ligacao{num}'][4]:
                 cur_obj_obj_eletrodo = getattr(self.ui, f"cbxEletrodo{i}_E")
                 cur_obj_obj_eletrodo.setChecked(False)
@@ -784,7 +897,7 @@ class TelaReceitaEsquerdaDieletrico(QDialog):
                 cur_obj_obj_eletrodo.setEnabled(False)
 
     def limpar_eletrodos_refazer(self):
-        for i in range(1,9):
+        for i in range(1,13):
             cur_obj_obj_eletrodo = getattr(self.ui, f"cbxEletrodo{i}_E")
             cur_obj_obj_eletrodo.setChecked(False)
             cur_obj_obj_eletrodo.setEnabled(True)

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>975</width>
-    <height>674</height>
+    <width>1024</width>
+    <height>768</height>
    </rect>
   </property>
   <property name="sizeIncrement">
@@ -59,8 +59,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>740</x>
-     <y>110</y>
+     <x>620</x>
+     <y>100</y>
      <width>18</width>
      <height>18</height>
     </rect>
@@ -91,9 +91,9 @@
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>610</x>
+     <x>540</x>
      <y>655</y>
-     <width>320</width>
+     <width>481</width>
      <height>50</height>
     </rect>
    </property>
@@ -207,11 +207,63 @@
      <string>8</string>
     </property>
    </widget>
+   <widget class="QRadioButton" name="rbtEletrodo9_D">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>20</y>
+      <width>41</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>9</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rbtEletrodo10_D">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>20</y>
+      <width>41</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>10</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rbtEletrodo11_D">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>20</y>
+      <width>41</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>11</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rbtEletrodo12_D">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>20</y>
+      <width>41</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>12</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>260</x>
+     <x>380</x>
      <y>270</y>
      <width>68</width>
      <height>20</height>
@@ -224,9 +276,9 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>260</x>
+     <x>380</x>
      <y>634</y>
-     <width>160</width>
+     <width>91</width>
      <height>22</height>
     </rect>
    </property>
@@ -317,7 +369,7 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>119</x>
+     <x>174</x>
      <y>250</y>
      <width>21</width>
      <height>10</height>
@@ -349,7 +401,7 @@
   <widget class="QLabel" name="label_18">
    <property name="geometry">
     <rect>
-     <x>209</x>
+     <x>329</x>
      <y>360</y>
      <width>21</width>
      <height>10</height>
@@ -455,8 +507,8 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="geometry">
     <rect>
-     <x>760</x>
-     <y>110</y>
+     <x>640</x>
+     <y>100</y>
      <width>18</width>
      <height>18</height>
     </rect>
@@ -477,8 +529,8 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="geometry">
     <rect>
-     <x>790</x>
-     <y>110</y>
+     <x>670</x>
+     <y>100</y>
      <width>18</width>
      <height>18</height>
     </rect>
@@ -499,8 +551,8 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="geometry">
     <rect>
-     <x>820</x>
-     <y>110</y>
+     <x>700</x>
+     <y>100</y>
      <width>18</width>
      <height>18</height>
     </rect>
@@ -521,8 +573,8 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="geometry">
     <rect>
-     <x>850</x>
-     <y>110</y>
+     <x>730</x>
+     <y>100</y>
      <width>18</width>
      <height>18</height>
     </rect>
@@ -543,8 +595,8 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="geometry">
     <rect>
-     <x>880</x>
-     <y>110</y>
+     <x>760</x>
+     <y>100</y>
      <width>18</width>
      <height>18</height>
     </rect>
@@ -565,8 +617,8 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="geometry">
     <rect>
-     <x>910</x>
-     <y>110</y>
+     <x>790</x>
+     <y>100</y>
      <width>18</width>
      <height>18</height>
     </rect>
@@ -587,8 +639,8 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="geometry">
     <rect>
-     <x>940</x>
-     <y>110</y>
+     <x>820</x>
+     <y>100</y>
      <width>18</width>
      <height>18</height>
     </rect>
@@ -608,7 +660,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>2</x>
      <y>260</y>
-     <width>250</width>
+     <width>370</width>
      <height>100</height>
     </rect>
    </property>
@@ -618,7 +670,7 @@ p, li { white-space: pre-wrap; }
    <property name="title">
     <string/>
    </property>
-   <widget class="QRadioButton" name="rbtConecEsquerdo_9">
+   <widget class="QRadioButton" name="radioButton_1_">
     <property name="enabled">
      <bool>false</bool>
     </property>
@@ -634,7 +686,7 @@ p, li { white-space: pre-wrap; }
      <string/>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_10">
+   <widget class="QRadioButton" name="radioButton_2_">
     <property name="enabled">
      <bool>false</bool>
     </property>
@@ -650,7 +702,7 @@ p, li { white-space: pre-wrap; }
      <string/>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_11">
+   <widget class="QRadioButton" name="radioButton_3_">
     <property name="enabled">
      <bool>false</bool>
     </property>
@@ -666,7 +718,7 @@ p, li { white-space: pre-wrap; }
      <string/>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_12">
+   <widget class="QRadioButton" name="radioButton_4_">
     <property name="enabled">
      <bool>false</bool>
     </property>
@@ -682,7 +734,7 @@ p, li { white-space: pre-wrap; }
      <string/>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_13">
+   <widget class="QRadioButton" name="radioButton_5_">
     <property name="enabled">
      <bool>false</bool>
     </property>
@@ -698,7 +750,7 @@ p, li { white-space: pre-wrap; }
      <string/>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_14">
+   <widget class="QRadioButton" name="radioButton_6_">
     <property name="enabled">
      <bool>false</bool>
     </property>
@@ -714,7 +766,7 @@ p, li { white-space: pre-wrap; }
      <string/>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_15">
+   <widget class="QRadioButton" name="radioButton_7_">
     <property name="enabled">
      <bool>false</bool>
     </property>
@@ -730,7 +782,7 @@ p, li { white-space: pre-wrap; }
      <string/>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_16">
+   <widget class="QRadioButton" name="radioButton_8_">
     <property name="enabled">
      <bool>false</bool>
     </property>
@@ -747,6 +799,9 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
    <widget class="QRadioButton" name="rbtConecDireito_6">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>160</x>
@@ -760,6 +815,9 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
    <widget class="QRadioButton" name="rbtConecDireito_2">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -773,6 +831,9 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
    <widget class="QRadioButton" name="rbtConecDireito_4">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>100</x>
@@ -786,6 +847,9 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
    <widget class="QRadioButton" name="rbtConecDireito_3">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>70</x>
@@ -799,6 +863,9 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
    <widget class="QRadioButton" name="rbtConecDireito_7">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>190</x>
@@ -812,6 +879,9 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
    <widget class="QRadioButton" name="rbtConecDireito_8">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>220</x>
@@ -825,6 +895,9 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
    <widget class="QRadioButton" name="rbtConecDireito_1">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -850,6 +923,9 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
    <widget class="QRadioButton" name="rbtConecDireito_5">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>130</x>
@@ -864,7 +940,7 @@ p, li { white-space: pre-wrap; }
    </widget>
    <widget class="QLabel" name="label_39">
     <property name="enabled">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
@@ -875,12 +951,12 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;9&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;13&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_40">
     <property name="enabled">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
@@ -891,12 +967,12 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;10&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;14&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_41">
     <property name="enabled">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
@@ -907,12 +983,12 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;11&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;15&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_42">
     <property name="enabled">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
@@ -923,12 +999,12 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;12&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;16&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_43">
     <property name="enabled">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
@@ -939,12 +1015,12 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;13&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;17&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_44">
     <property name="enabled">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
@@ -955,12 +1031,12 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;14&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;18&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_45">
     <property name="enabled">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
@@ -971,12 +1047,12 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;15&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;19&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_46">
     <property name="enabled">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
@@ -987,10 +1063,13 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;16&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;20&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_47">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>160</x>
@@ -1004,6 +1083,9 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
    <widget class="QLabel" name="label_48">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -1017,6 +1099,9 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
    <widget class="QLabel" name="label_49">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>220</x>
@@ -1030,6 +1115,9 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
    <widget class="QLabel" name="label_50">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -1043,6 +1131,9 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
    <widget class="QLabel" name="label_51">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>190</x>
@@ -1056,6 +1147,9 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
    <widget class="QLabel" name="label_52">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>70</x>
@@ -1069,6 +1163,9 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
    <widget class="QLabel" name="label_53">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>100</x>
@@ -1082,6 +1179,9 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
    <widget class="QLabel" name="label_54">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>130</x>
@@ -1099,7 +1199,7 @@ p, li { white-space: pre-wrap; }
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>118</width>
+      <width>172</width>
       <height>3</height>
      </rect>
     </property>
@@ -1113,9 +1213,9 @@ p, li { white-space: pre-wrap; }
    <widget class="Line" name="line_2">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>193</x>
       <y>0</y>
-      <width>118</width>
+      <width>178</width>
       <height>3</height>
      </rect>
     </property>
@@ -1126,13 +1226,269 @@ p, li { white-space: pre-wrap; }
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
+   <widget class="QRadioButton" name="radioButton_11_">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>60</y>
+      <width>20</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_12_">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>60</y>
+      <width>20</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rbtConecDireito_12">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>9</y>
+      <width>20</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rbtConecDireito_9">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>9</y>
+      <width>20</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rbtConecDireito_10">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>9</y>
+      <width>20</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rbtConecDireito_11">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>9</y>
+      <width>20</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_9_">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>60</y>
+      <width>20</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_10_">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>60</y>
+      <width>20</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_55">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>30</y>
+      <width>20</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;24&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_57">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>30</y>
+      <width>20</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;23&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_58">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>30</y>
+      <width>20</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;22&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_59">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>30</y>
+      <width>20</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;21&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_155">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>80</y>
+      <width>20</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;9&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_156">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>80</y>
+      <width>20</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;12&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_157">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>80</y>
+      <width>20</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;11&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_158">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>80</y>
+      <width>20</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;10&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
   </widget>
   <widget class="Line" name="line_3">
    <property name="geometry">
     <rect>
      <x>50</x>
      <y>360</y>
-     <width>159</width>
+     <width>280</width>
      <height>3</height>
     </rect>
    </property>
@@ -1162,7 +1518,7 @@ p, li { white-space: pre-wrap; }
   <widget class="Line" name="line_5">
    <property name="geometry">
     <rect>
-     <x>230</x>
+     <x>350</x>
      <y>360</y>
      <width>22</width>
      <height>3</height>
@@ -1178,7 +1534,7 @@ p, li { white-space: pre-wrap; }
   <widget class="Line" name="line_6">
    <property name="geometry">
     <rect>
-     <x>209</x>
+     <x>329</x>
      <y>370</y>
      <width>22</width>
      <height>3</height>
@@ -1210,7 +1566,7 @@ p, li { white-space: pre-wrap; }
   <widget class="Line" name="line_8">
    <property name="geometry">
     <rect>
-     <x>119</x>
+     <x>174</x>
      <y>250</y>
      <width>22</width>
      <height>3</height>
@@ -1242,7 +1598,7 @@ p, li { white-space: pre-wrap; }
   <widget class="Line" name="line_10">
    <property name="geometry">
     <rect>
-     <x>252</x>
+     <x>370</x>
      <y>260</y>
      <width>3</width>
      <height>103</height>
@@ -1258,7 +1614,7 @@ p, li { white-space: pre-wrap; }
   <widget class="Line" name="line_11">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>195</x>
      <y>250</y>
      <width>3</width>
      <height>13</height>
@@ -1274,7 +1630,7 @@ p, li { white-space: pre-wrap; }
   <widget class="Line" name="line_12">
    <property name="geometry">
     <rect>
-     <x>119</x>
+     <x>174</x>
      <y>250</y>
      <width>3</width>
      <height>13</height>
@@ -1290,7 +1646,7 @@ p, li { white-space: pre-wrap; }
   <widget class="Line" name="line_13">
    <property name="geometry">
     <rect>
-     <x>209</x>
+     <x>329</x>
      <y>360</y>
      <width>3</width>
      <height>13</height>
@@ -1306,7 +1662,7 @@ p, li { white-space: pre-wrap; }
   <widget class="Line" name="line_14">
    <property name="geometry">
     <rect>
-     <x>230</x>
+     <x>350</x>
      <y>360</y>
      <width>3</width>
      <height>13</height>
@@ -1388,7 +1744,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>2</x>
      <y>570</y>
-     <width>250</width>
+     <width>370</width>
      <height>100</height>
     </rect>
    </property>
@@ -1398,7 +1754,7 @@ p, li { white-space: pre-wrap; }
    <property name="title">
     <string/>
    </property>
-   <widget class="QRadioButton" name="radioButton_105">
+   <widget class="QRadioButton" name="radioButton_1">
     <property name="enabled">
      <bool>false</bool>
     </property>
@@ -1414,7 +1770,7 @@ p, li { white-space: pre-wrap; }
      <string/>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_106">
+   <widget class="QRadioButton" name="radioButton_2">
     <property name="enabled">
      <bool>false</bool>
     </property>
@@ -1430,7 +1786,7 @@ p, li { white-space: pre-wrap; }
      <string/>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_107">
+   <widget class="QRadioButton" name="radioButton_3">
     <property name="enabled">
      <bool>false</bool>
     </property>
@@ -1446,7 +1802,7 @@ p, li { white-space: pre-wrap; }
      <string/>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_108">
+   <widget class="QRadioButton" name="radioButton_4">
     <property name="enabled">
      <bool>false</bool>
     </property>
@@ -1462,7 +1818,7 @@ p, li { white-space: pre-wrap; }
      <string/>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_109">
+   <widget class="QRadioButton" name="radioButton_5">
     <property name="enabled">
      <bool>false</bool>
     </property>
@@ -1478,7 +1834,7 @@ p, li { white-space: pre-wrap; }
      <string/>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_110">
+   <widget class="QRadioButton" name="radioButton_6">
     <property name="enabled">
      <bool>false</bool>
     </property>
@@ -1494,7 +1850,7 @@ p, li { white-space: pre-wrap; }
      <string/>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_111">
+   <widget class="QRadioButton" name="radioButton_7">
     <property name="enabled">
      <bool>false</bool>
     </property>
@@ -1510,7 +1866,7 @@ p, li { white-space: pre-wrap; }
      <string/>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_112">
+   <widget class="QRadioButton" name="radioButton_8">
     <property name="enabled">
      <bool>false</bool>
     </property>
@@ -1639,134 +1995,6 @@ p, li { white-space: pre-wrap; }
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label_135">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>30</y>
-      <width>20</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;9&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_136">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>30</y>
-      <width>20</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;10&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_137">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>30</y>
-      <width>20</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;11&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_138">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>30</y>
-      <width>20</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;12&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_139">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>30</y>
-      <width>20</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;13&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_140">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>30</y>
-      <width>20</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;14&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_141">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>190</x>
-      <y>30</y>
-      <width>20</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;15&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_142">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>30</y>
-      <width>20</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;16&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_143">
     <property name="geometry">
      <rect>
@@ -1876,7 +2104,7 @@ p, li { white-space: pre-wrap; }
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>116</width>
+      <width>173</width>
       <height>3</height>
      </rect>
     </property>
@@ -1890,9 +2118,9 @@ p, li { white-space: pre-wrap; }
    <widget class="Line" name="line_30">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>196</x>
       <y>0</y>
-      <width>118</width>
+      <width>175</width>
       <height>3</height>
      </rect>
     </property>
@@ -1903,11 +2131,371 @@ p, li { white-space: pre-wrap; }
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
+   <widget class="QRadioButton" name="rbtEletrodoDireito_12">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>60</y>
+      <width>20</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rbtEletrodoDireito_9">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>60</y>
+      <width>20</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rbtEletrodoDireito_11">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>60</y>
+      <width>20</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rbtEletrodoDireito_10">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>60</y>
+      <width>20</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_10">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>10</y>
+      <width>20</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_12">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>10</y>
+      <width>20</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_11">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>10</y>
+      <width>20</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_9">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>10</y>
+      <width>20</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_60">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>30</y>
+      <width>20</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;23&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_61">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>30</y>
+      <width>20</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;22&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_62">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>30</y>
+      <width>20</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;21&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_56">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>30</y>
+      <width>20</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;19&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_63">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>20</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;13&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_64">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>30</y>
+      <width>20</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;18&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_65">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>30</y>
+      <width>20</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;20&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_66">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>30</y>
+      <width>20</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;24&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_67">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>30</y>
+      <width>20</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;15&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_68">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>30</y>
+      <width>20</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;17&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_69">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>30</y>
+      <width>20</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;14&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_70">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>30</y>
+      <width>20</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;16&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_151">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>80</y>
+      <width>20</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;9&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_152">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>80</y>
+      <width>20</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;12&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_153">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>80</y>
+      <width>20</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;11&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_154">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>80</y>
+      <width>20</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;10&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
   </widget>
   <widget class="Line" name="line_31">
    <property name="geometry">
     <rect>
-     <x>209</x>
+     <x>319</x>
      <y>680</y>
      <width>22</width>
      <height>3</height>
@@ -1923,7 +2511,7 @@ p, li { white-space: pre-wrap; }
   <widget class="Line" name="line_32">
    <property name="geometry">
     <rect>
-     <x>230</x>
+     <x>340</x>
      <y>670</y>
      <width>3</width>
      <height>13</height>
@@ -1968,26 +2556,10 @@ p, li { white-space: pre-wrap; }
     <string/>
    </property>
   </widget>
-  <widget class="Line" name="line_34">
-   <property name="geometry">
-    <rect>
-     <x>119</x>
-     <y>560</y>
-     <width>22</width>
-     <height>3</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(0, 0, 0);</string>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_20">
    <property name="geometry">
     <rect>
-     <x>209</x>
+     <x>319</x>
      <y>670</y>
      <width>21</width>
      <height>10</height>
@@ -2003,7 +2575,7 @@ p, li { white-space: pre-wrap; }
   <widget class="Line" name="line_35">
    <property name="geometry">
     <rect>
-     <x>230</x>
+     <x>340</x>
      <y>670</y>
      <width>22</width>
      <height>3</height>
@@ -2019,7 +2591,7 @@ p, li { white-space: pre-wrap; }
   <widget class="Line" name="line_36">
    <property name="geometry">
     <rect>
-     <x>252</x>
+     <x>372</x>
      <y>570</y>
      <width>3</width>
      <height>103</height>
@@ -2067,7 +2639,7 @@ p, li { white-space: pre-wrap; }
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>119</x>
+     <x>175</x>
      <y>560</y>
      <width>21</width>
      <height>10</height>
@@ -2083,7 +2655,7 @@ p, li { white-space: pre-wrap; }
   <widget class="Line" name="line_39">
    <property name="geometry">
     <rect>
-     <x>209</x>
+     <x>319</x>
      <y>670</y>
      <width>3</width>
      <height>13</height>
@@ -2117,7 +2689,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>50</x>
      <y>670</y>
-     <width>159</width>
+     <width>269</width>
      <height>3</height>
     </rect>
    </property>
@@ -2131,7 +2703,7 @@ p, li { white-space: pre-wrap; }
   <widget class="Line" name="line_42">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>196</x>
      <y>560</y>
      <width>3</width>
      <height>13</height>
@@ -2163,7 +2735,7 @@ p, li { white-space: pre-wrap; }
   <widget class="Line" name="line_44">
    <property name="geometry">
     <rect>
-     <x>118</x>
+     <x>174</x>
      <y>560</y>
      <width>3</width>
      <height>13</height>
@@ -2179,7 +2751,7 @@ p, li { white-space: pre-wrap; }
   <widget class="Line" name="line_45">
    <property name="geometry">
     <rect>
-     <x>119</x>
+     <x>175</x>
      <y>559</y>
      <width>23</width>
      <height>3</height>
@@ -2243,14 +2815,118 @@ p, li { white-space: pre-wrap; }
   <widget class="QPushButton" name="btLimparEletrodo">
    <property name="geometry">
     <rect>
-     <x>940</x>
-     <y>669</y>
+     <x>530</x>
+     <y>620</y>
      <width>71</width>
      <height>41</height>
     </rect>
    </property>
    <property name="text">
     <string>Limpar</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbEletrodo12_D">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>930</x>
+     <y>100</y>
+     <width>18</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 255, 0);</string>
+   </property>
+   <property name="midLineWidth">
+    <number>1</number>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;12&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbEletrodo9_D">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>840</x>
+     <y>100</y>
+     <width>18</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 255, 0);</string>
+   </property>
+   <property name="midLineWidth">
+    <number>1</number>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;9&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbEletrodo11_D">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>900</x>
+     <y>100</y>
+     <width>18</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 255, 0);</string>
+   </property>
+   <property name="midLineWidth">
+    <number>1</number>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;11&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbEletrodo10_D">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>870</x>
+     <y>100</y>
+     <width>18</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 255, 0);</string>
+   </property>
+   <property name="midLineWidth">
+    <number>1</number>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;10&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="Line" name="line_34">
+   <property name="geometry">
+    <rect>
+     <x>347</x>
+     <y>670</y>
+     <width>27</width>
+     <height>3</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
    </property>
   </widget>
   <zorder>btVoltar</zorder>
@@ -2303,7 +2979,6 @@ p, li { white-space: pre-wrap; }
   <zorder>line_32</zorder>
   <zorder>line_33</zorder>
   <zorder>label_19</zorder>
-  <zorder>line_34</zorder>
   <zorder>label_20</zorder>
   <zorder>line_35</zorder>
   <zorder>line_36</zorder>
@@ -2320,6 +2995,11 @@ p, li { white-space: pre-wrap; }
   <zorder>btSetaEsq</zorder>
   <zorder>btSetaDir</zorder>
   <zorder>btLimparEletrodo</zorder>
+  <zorder>lbEletrodo12_D</zorder>
+  <zorder>lbEletrodo9_D</zorder>
+  <zorder>lbEletrodo11_D</zorder>
+  <zorder>lbEletrodo10_D</zorder>
+  <zorder>line_34</zorder>
  </widget>
  <resources/>
  <connections/>

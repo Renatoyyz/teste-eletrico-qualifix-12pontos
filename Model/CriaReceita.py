@@ -79,6 +79,18 @@ class TelaCriaReceita(QDialog):
         self.ui.lbEletrodo8_Dir.setVisible(False)
         self.ui.lbEletrodo8_Dir.setParent(self.ui.lbImgDireito) # Seta label para acertar coordenadas
 
+        self.ui.lbEletrodo9_Dir.setVisible(False)
+        self.ui.lbEletrodo9_Dir.setParent(self.ui.lbImgDireito)
+
+        self.ui.lbEletrodo10_Dir.setVisible(False)
+        self.ui.lbEletrodo10_Dir.setParent(self.ui.lbImgDireito)
+
+        self.ui.lbEletrodo11_Dir.setVisible(False)
+        self.ui.lbEletrodo11_Dir.setParent(self.ui.lbImgDireito)
+
+        self.ui.lbEletrodo12_Dir.setVisible(False)
+        self.ui.lbEletrodo12_Dir.setParent(self.ui.lbImgDireito)
+
         self.ui.lbEletrodo1_Esque.setVisible(False)
         self.ui.lbEletrodo1_Esque.setParent(self.ui.lbImgEsquerdo) # Seta label para acertar coordenadas
 
@@ -102,6 +114,19 @@ class TelaCriaReceita(QDialog):
 
         self.ui.lbEletrodo8_Esque.setVisible(False)
         self.ui.lbEletrodo8_Esque.setParent(self.ui.lbImgEsquerdo) # Seta label para acertar coordenadas
+
+        self.ui.lbEletrodo9_Esque.setVisible(False)
+        self.ui.lbEletrodo9_Esque.setParent(self.ui.lbImgEsquerdo) # Seta label para acertar coordenadas
+
+        self.ui.lbEletrodo10_Esque.setVisible(False)
+        self.ui.lbEletrodo10_Esque.setParent(self.ui.lbImgEsquerdo) # Seta label para acertar coordenadas
+
+        self.ui.lbEletrodo11_Esque.setVisible(False)
+        self.ui.lbEletrodo11_Esque.setParent(self.ui.lbImgEsquerdo) # Seta label para acertar coordenadas
+
+        self.ui.lbEletrodo12_Esque.setVisible(False)
+        self.ui.lbEletrodo12_Esque.setParent(self.ui.lbImgEsquerdo) # Seta label para acertar coordenadas
+
 
     def completa_nome(self, event):
         teclado = AlphanumericKeyboard(dado=self.dado)
@@ -155,6 +180,18 @@ class TelaCriaReceita(QDialog):
 
                 elif index == 8 and coord[8]!=None:
                     self.posiciona_eletrodos(8,lado,coord[index])
+
+                elif index == 9 and coord[9]!=None:
+                    self.posiciona_eletrodos(9,lado,coord[index])   
+
+                elif index == 10 and coord[10]!=None:
+                    self.posiciona_eletrodos(10,lado,coord[index])
+
+                elif index == 11 and coord[11]!=None:
+                    self.posiciona_eletrodos(11,lado,coord[index])
+
+                elif index == 12 and coord[12]!=None:
+                    self.posiciona_eletrodos(12,lado,coord[index])
 
     def posiciona_eletrodos(self, eletrodo, lado, coord):
         if lado == 0:
