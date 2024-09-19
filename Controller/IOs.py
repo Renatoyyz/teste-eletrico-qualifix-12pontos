@@ -123,7 +123,7 @@ class IO_MODBUS:
         self.valor_saida_geral = 0
         self.valor_saida_geral2 = 0
 
-        self.fake_modbus = True
+        self.fake_modbus = False
         self.adr = self.ADR_1
         try:
             self.ser = serial.Serial(
