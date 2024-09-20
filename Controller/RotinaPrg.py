@@ -619,7 +619,7 @@ class RotinaPrg:
         result = []
         # self.start_megometro()
 
-        for i in range(1,17):
+        for i in range(1,21):
             if self.isolacao_esquerdo[f"ligacao{i}"][2] != "":
                 # Aciona pino da tomada de conectores - DO_0x do ADR_1
                 self.io.wp_8027(self.io.ADR_1_X,self.isolacao_esquerdo[f"ligacao{i}"][0],1)
@@ -668,7 +668,7 @@ class RotinaPrg:
     def fake_isolacao_esquerdo(self):
         result = []
 
-        for i in range(1,25):
+        for i in range(1,21):
             if self.isolacao_esquerdo[f"ligacao{i}"][2] != "":
                     # faz leitura e associa a variável
                     # índice 0 = número da ligação / índice 1 = Nome da ligação / índice 2 = status de ligaçao - 0=passou 1=não passou
@@ -681,7 +681,7 @@ class RotinaPrg:
 
         # self.start_megometro()
 
-        for i in range(1,17):
+        for i in range(1,21):
             if self.isolacao_direito[f"ligacao{i}"][2] != "":
                 # Aciona pino da tomada de conectores - DO_0x do ADR_1
                 self.io.wp_8027(self.io.ADR_2_X,self.isolacao_direito[f"ligacao{i}"][0],1)
@@ -727,7 +727,7 @@ class RotinaPrg:
     def fake_isolacao_direito(self):
         result = []
 
-        for i in range(1,25):
+        for i in range(1,21):
             if self.isolacao_direito[f"ligacao{i}"][2] != "":
                     # faz leitura e associa a variável
                     # índice 0 = número da ligação / índice 1 = Nome da ligação / índice 2 = status de ligaçao - 0=passou 1=não passou

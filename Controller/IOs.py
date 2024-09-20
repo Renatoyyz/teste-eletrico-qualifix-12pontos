@@ -160,23 +160,20 @@ class IO_MODBUS:
             elif out >= 9 and out <= 12:# Se saída for entre 9 e 12
                 adr = self.ADR_2 # Usa o módulo 2
                 out = out-8 # e corrige para a saída do módulo 2
-            elif out >=13 and out <=20:
-                adr = self.ADR_1
-                out = out-4
-            elif out >= 21 and out <= 24:
-                adr = self.ADR_2
-                out = out-12
-
-        elif adr == self.ADR_2_X:
-            if out >=1 and out <=4:# Se saída for entre 1 e 4
-                adr = self.ADR_2 # Usa o módulo 2
-                out = out+4
-            elif out >= 5 and out <= 12:# Se saída for entre 5 e 12
-                adr = self.ADR_3 # Usa o módulo 3
-                out = out-4 # e corrige para a saída do módulo 3
             elif out >=13 and out <=16:
                 adr = self.ADR_2
+                out = out-8
             elif out >= 17 and out <= 24:
+                adr = self.ADR_3
+                out = out-16
+
+        elif adr == self.ADR_2_X:
+            if out >=1 and out <=8:# Se saída for entre 1 e 8
+                adr = self.ADR_1 # Usa o módulo 1
+                out = out+8 # e corrige para a saída do módulo 1
+            elif out >= 9 and out <= 16:# Se saída for entre 9 e 16
+                adr = self.ADR_2 # Usa o módulo 2
+            elif out >=17 and out <=24:
                 adr = self.ADR_3
                 out = out-8
         
