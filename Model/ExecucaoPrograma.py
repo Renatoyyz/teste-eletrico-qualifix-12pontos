@@ -92,7 +92,7 @@ class ExecutaRotinaThread(QThread):
                                 self.esquerda_ok = False
 
                             # garante que todas os eletrodos fiquem verdes para ser tocados depois
-                            self.operacao._carrega_eletrodos(self.operacao.rotina.coord_eletrodo_esquerdo, "E")# O 'E' é para formar o texto que criará o objeto lbEletrodo1_E   
+                            # self.operacao._carrega_eletrodos(self.operacao.rotina.coord_eletrodo_esquerdo, "E")# O 'E' é para formar o texto que criará o objeto lbEletrodo1_E   
                         else:
                             self.esquerda_ok = True # Se Lado esquerdo não foi escolhido, sinaliza como ok para poder 
                                                     # continuar com o lado direito
@@ -131,7 +131,7 @@ class ExecutaRotinaThread(QThread):
                             else:
                                 self.direita_ok = False
                             # garante que todas os eletrodos fiquem verdes para ser tocados depois
-                            self.operacao._carrega_eletrodos(self.operacao.rotina.coord_eletrodo_direito, "D")# O 'D' é para formar o texto que criará o objeto lbEletrodo1_D
+                            # self.operacao._carrega_eletrodos(self.operacao.rotina.coord_eletrodo_direito, "D")# O 'D' é para formar o texto que criará o objeto lbEletrodo1_D
                         else:
                             self.direita_ok = True # Se Lado direito não foi escolhido, sinaliza como ok para poder 
                                                     # continuar com o lado esquerdo    
