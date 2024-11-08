@@ -251,19 +251,19 @@ class IO_MODBUS:
         # Invertendo a ordem dos bits
         # out_bin = out_bin[::-1]
 
-        # Convertendo para hexadecimal com 4 dígitos
-        out_hex = hex(out_loc)[2:].zfill(4).upper()
-
-        hex_text = f"{id_loc}0f0000001002{out_hex}"
-        bytes_hex = bytes.fromhex(hex_text)  # Transforma em hexa
-
-        crc_result = self.crc16_modbus(bytes_hex) # Retorna o CRC
-
-        parte_superior = (crc_result >> 8) & 0xFF  # Desloca 8 bits para a direita e aplica a máscara 0xFF
-        parte_inferior = crc_result & 0xFF        # Aplica a máscara 0xFF diretamente
-
         for i in range(3):
             try:
+                # Convertendo para hexadecimal com 4 dígitos
+                out_hex = hex(out_loc)[2:].zfill(4).upper()
+
+                hex_text = f"{id_loc}0f0000001002{out_hex}"
+                bytes_hex = bytes.fromhex(hex_text)  # Transforma em hexa
+
+                crc_result = self.crc16_modbus(bytes_hex) # Retorna o CRC
+
+                parte_superior = (crc_result >> 8) & 0xFF  # Desloca 8 bits para a direita e aplica a máscara 0xFF
+                parte_inferior = crc_result & 0xFF        # Aplica a máscara 0xFF diretamente
+
                 # Repete-se os comandos em decimal com os devidos bytes de CRC
                 self.ser.write([adr,0x0f,0,0,0,16,2,out_val_l,out_val_h,parte_inferior,parte_superior])
                 # self.ser.flush()
@@ -312,7 +312,7 @@ class IO_MODBUS:
     def wp_8026_(self, adr, input):
         dados_recebidos = None
 
-        if adr == self.ADR_3:
+        if adr == self.ADR_4:
             id_loc = hex(adr)[2:]
             id_loc = id_loc.zfill(2).upper()
 

@@ -513,14 +513,13 @@ class RotinaPrg:
         return result
     
     def start_megometro(self):
-        # Garante um reset antes que o megômetro seja acionado
-        self.reset_megometro()
         # Garante o Stop do megômetro - pulso
         self.io.wp_8027(self.io.ADR_4, 2, 1)# liga
+        time.sleep(0.5)
+        # Garante um reset antes que o megômetro seja acionado
+        self.reset_megometro()
 
     def stop_megometro(self):
-        # Garante um reset antes que o megômetro seja desacionado
-        self.reset_megometro()
         # Reseta relé que liga entrada de mêgometro atuado
         self.io.wp_8027(self.io.ADR_4,2,0)
 
@@ -611,12 +610,12 @@ class RotinaPrg:
                     self.eletrodo_testando_iso_e[0] = self.isolacao_esquerdo[f"ligacao{i}"][3]
                     self.eletrodo_testando_iso_e[1] = self.isolacao_esquerdo[f"ligacao{i}"][4]
 
-                    # Depois de conferido a isolação pelo megômetro, reseta relé que liga entrada
-                    self.reset_megometro()
-
                     # desliga saída para não conflitar com o próximo
                     self.io.wp_8027(self.io.ADR_1_X,self.isolacao_esquerdo[f"ligacao{i}"][0],0)
                     self.io.wp_8027(self.io.ADR_1_X,self.isolacao_esquerdo[f"ligacao{i}"][1]+12,0)
+                    
+                    # Depois de conferido a isolação pelo megômetro, reseta relé que liga entrada
+                    self.reset_megometro()
                 else:
                     result = []
                     # desliga saída para não conflitar com o próximo
@@ -662,12 +661,12 @@ class RotinaPrg:
                     self.eletrodo_testando_iso_d[0] = self.isolacao_direito[f"ligacao{i}"][3]
                     self.eletrodo_testando_iso_d[1] = self.isolacao_direito[f"ligacao{i}"][4]
 
-                    # Depois de conferido a isolação pelo megômetro, reseta relé que liga entrada
-                    self.reset_megometro()
-
                     # desliga saída para não conflitar com o próximo
                     self.io.wp_8027(self.io.ADR_2_X,self.isolacao_direito[f"ligacao{i}"][0],0)
                     self.io.wp_8027(self.io.ADR_2_X,self.isolacao_direito[f"ligacao{i}"][1]+12,0)
+                    
+                    # Depois de conferido a isolação pelo megômetro, reseta relé que liga entrada
+                    self.reset_megometro()
                 else:
                     result = []
                     # desliga saída para não conflitar com o próximo
@@ -746,23 +745,23 @@ if __name__ == "__main__":
     io = IO_MODBUS()
     rotina = RotinaPrg( io=io )
 
-    # while True:
-    #     comando = input("Digite 1 para subir o pistão ou 0 para descer o pistão (q para sair): ")
-    #     if comando == '1':
-    #         if rotina.sobe_pistao():
-    #             print("Pistão subiu com sucesso.")
-    #         else:
-    #             print("Erro ao subir o pistão.")
-    #     elif comando == '0':
-    #         if rotina.abaixa_pistao():
-    #             print("Pistão desceu com sucesso.")
-    #         else:
-    #             print("Erro ao descer o pistão.")
-    #     elif comando == 'q':
-    #         print("Saindo...")
-    #         break
-    #     else:
-    #         print("Comando inválido.")
+    while True:
+        comando = input("Digite 1 para subir o pistão ou 0 para descer o pistão (q para sair): ")
+        if comando == '1':
+            if rotina.sobe_pistao():
+                print("Pistão subiu com sucesso.")
+            else:
+                print("Erro ao subir o pistão.")
+        elif comando == '0':
+            if rotina.abaixa_pistao():
+                print("Pistão desceu com sucesso.")
+            else:
+                print("Erro ao descer o pistão.")
+        elif comando == 'q':
+            print("Saindo...")
+            break
+        else:
+            print("Comando inválido.")
 
     # while True:
     #     comando = input("Digite 1 para acionar marcação direita ou 0 para acionar marcação esquerda (q para sair): ")
@@ -796,22 +795,22 @@ if __name__ == "__main__":
     #         print("Comando inválido.")
 
   
-    while True:
-        comando = input("Digite 1 para acender a luz verde, 0 para apagar a luz verde, 3 para acender a luz vermelha, 4 para apagar a luz vermelha (q para sair): ")
-        if comando == '1':
-            rotina.acende_verde()
-            print("Luz verde acesa com sucesso.")
-        elif comando == '0':
-            rotina.apaga_torre()
-            print("Luz verde apagada com sucesso.")
-        elif comando == '3':
-            rotina.acende_vermelho()
-            print("Luz vermelha acesa com sucesso.")
-        elif comando == '4':
-            rotina.apaga_torre()
-            print("Luz vermelha apagada com sucesso.")
-        elif comando == 'q':
-            print("Saindo...")
-            break
-        else:
-            print("Comando inválido.")
+    # while True:
+    #     comando = input("Digite 1 para acender a luz verde, 0 para apagar a luz verde, 3 para acender a luz vermelha, 4 para apagar a luz vermelha (q para sair): ")
+    #     if comando == '1':
+    #         rotina.acende_verde()
+    #         print("Luz verde acesa com sucesso.")
+    #     elif comando == '0':
+    #         rotina.apaga_torre()
+    #         print("Luz verde apagada com sucesso.")
+    #     elif comando == '3':
+    #         rotina.acende_vermelho()
+    #         print("Luz vermelha acesa com sucesso.")
+    #     elif comando == '4':
+    #         rotina.apaga_torre()
+    #         print("Luz vermelha apagada com sucesso.")
+    #     elif comando == 'q':
+    #         print("Saindo...")
+    #         break
+    #     else:
+    #         print("Comando inválido.")
