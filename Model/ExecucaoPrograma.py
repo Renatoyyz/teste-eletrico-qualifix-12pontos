@@ -59,7 +59,6 @@ class ExecutaRotinaThread(QThread):
                         # self.operacao.rotina.limpa_saidas_esquerda_direita()# Desativa todos os relés por segurança
                         if self.operacao.habili_desbilita_esquerdo == True:
                             self.operacao.qual_teste = self.operacao.TESTE_COND_E
-                            QApplication.processEvents()  # Mantém a UI responsiva após iniciar as threads
                             self.result_condu_e = self.operacao.rotina.esquerdo_direito_condutividade(0)# Testa O lado esquerdo
                             # Verifica condutividade
                             cond = all(c[2] != 0 for c in self.result_condu_e)   
@@ -67,7 +66,6 @@ class ExecutaRotinaThread(QThread):
                                 self.operacao.esquerda_condu_ok = 2 # Sinaliza para execução, que passou
                                 # Se condutividade passou continua testando isolação
                                 self.operacao.qual_teste = self.operacao.TESTE_ISO_E
-                                QApplication.processEvents()  # Mantém a UI responsiva após iniciar as threads
                                 self.result_iso_e = self.operacao.rotina.esquerdo_direito_isolacao(0)# Testa O lado esquerdo
                                 # Verifica isolação
                                 iso = all(i[2] != 1 for i in self.result_iso_e) 
@@ -99,7 +97,6 @@ class ExecutaRotinaThread(QThread):
 
                         if self.operacao.habili_desbilita_direito == True:
                             self.operacao.qual_teste = self.operacao.TESTE_COND_D
-                            QApplication.processEvents()  # Mantém a UI responsiva após iniciar as threads
                             self.result_condu_d = self.operacao.rotina.esquerdo_direito_condutividade(1)# Testa O lado direito
                             # Verifica condutividade
                             cond = all(c[2] != 0 for c in self.result_condu_d)  
@@ -107,7 +104,6 @@ class ExecutaRotinaThread(QThread):
                                 self.operacao.direita_condu_ok = 2 # Sinaliza para execução, que passou
                                 # Se condutividade passou continua testando isolação
                                 self.operacao.qual_teste = self.operacao.TESTE_ISO_D
-                                QApplication.processEvents()  # Mantém a UI responsiva após iniciar as threads
                                 self.result_iso_d = self.operacao.rotina.esquerdo_direito_isolacao(1)# Testa O lado direito
                                 # Verifica isolação
                                 iso = all(i[2] != 1 for i in self.result_iso_d)

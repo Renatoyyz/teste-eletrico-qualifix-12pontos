@@ -267,16 +267,16 @@ class IO_MODBUS:
                 # Repete-se os comandos em decimal com os devidos bytes de CRC
                 self.ser.write([adr,0x0f,0,0,0,16,2,out_val_l,out_val_h,parte_inferior,parte_superior])
                 # self.ser.flush()
-                start_time = time.time()
+                # start_time = time.time()
 
                 while not self.ser.readable():
-                    if time.time() - start_time > self.ser.timeout:
-                        print("Timeout: Nenhuma resposta do escravo.")
-                        break
+                    # if time.time() - start_time > self.ser.timeout:
+                    #     print("Timeout: Nenhuma resposta do escravo.")
+                    #     break
                     time.sleep(0.1)  # Aguarde um curto período antes de verificar novamente
 
                 dados_recebidos = self.ser.read(8)
-                self.ser.flushInput()  # Limpa o buffer de entrada após a leitura
+                # self.ser.flushInput()  # Limpa o buffer de entrada após a leitura
                 if dados_recebidos != b'':
                     dados_recebidos = dados_recebidos.hex()
                     hex_text = dados_recebidos[0:2]+dados_recebidos[2:4]+dados_recebidos[4:6]+dados_recebidos[6:8]+dados_recebidos[8:10]+dados_recebidos[10:12]
@@ -316,7 +316,7 @@ class IO_MODBUS:
             id_loc = hex(adr)[2:]
             id_loc = id_loc.zfill(2).upper()
 
-            hex_text = f"{id_loc} 02 00 00 00 10"
+            hex_text = f"{id_loc}0200000010"
 
             bytes_hex = bytes.fromhex(hex_text)  # Transforma em hexa
 
@@ -330,12 +330,13 @@ class IO_MODBUS:
                     # Repete-se os comandos em decimal com os devidos bytes de CRC
                     self.ser.write([adr,2,0,0,0,16,parte_inferior, parte_superior])
                     # self.ser.flush()
-                    start_time = time.time()
+                    # start_time = time.time()
                     while not self.ser.readable():
-                        if time.time() - start_time > self.ser.timeout:
-                            print("Timeout: Nenhuma resposta do escravo.")
-                            return -1
+                        # if time.time() - start_time > self.ser.timeout:
+                        #     print("Timeout: Nenhuma resposta do escravo.")
+                        #     return -1
                         time.sleep(0.1)  # Aguarde um curto período antes de verificar novamente
+                    time.sleep(0.1)
                     dados_recebidos = self.ser.read(7)
                     self.ser.flushInput()  # Limpa o buffer de entrada após a leitura
                     if dados_recebidos != b'':
@@ -350,29 +351,29 @@ class IO_MODBUS:
                         superior_crc = int(dados_recebidos[12:14],16) # Transforma de hexa para int
                         inferior_crc = int(dados_recebidos[10:12],16) # Transforma de hexa para int
 
-                        if parte_superior == superior_crc and parte_inferior == inferior_crc:
-                            dados_recebidos = dados_recebidos[6:10]
-                            dados_recebidos = int(dados_recebidos, 16)
-                            # Separando em duas partes (0x01 e 0x00)
-                            hex_part1 = dados_recebidos >> 8  # Primeiros 8 bits
-                            hex_part2 = dados_recebidos & 0xFF  # Últimos 8 bits
-                            result=0
-                            if input < 9:
-                                test = 0x01*( pow(2,input-1) )
-                                result = ( (hex_part1 & (test))  )
-                                result = result>>(input-1)
-                                # if result > 2:
-                                #     result=1
-                            else:
-                                test = 0x01*( pow(2,(input-8)-1) )
-                                result = ( (hex_part2 & (test))  )
-                                result = result>>((input-8)-1)
-
-                            return result
+                        # if parte_superior == superior_crc and parte_inferior == inferior_crc:
+                        dados_recebidos = dados_recebidos[6:10]
+                        dados_recebidos = int(dados_recebidos, 16)
+                        # Separando em duas partes (0x01 e 0x00)
+                        hex_part1 = dados_recebidos >> 8  # Primeiros 8 bits
+                        hex_part2 = dados_recebidos & 0xFF  # Últimos 8 bits
+                        result=0
+                        if input < 9:
+                            test = 0x01*( pow(2,input-1) )
+                            result = ( (hex_part1 & (test))  )
+                            result = result>>(input-1)
+                            # if result > 2:
+                            #     result=1
                         else:
-                            if i > 1:
-                                self.reset_serial()
-                            # return -1
+                            test = 0x01*( pow(2,(input-8)-1) )
+                            result = ( (hex_part2 & (test))  )
+                            result = result>>((input-8)-1)
+
+                        return result
+                        # else:
+                        #     if i > 1:
+                        #         self.reset_serial()
+                        #     # return -1
                     else:
                         if i > 1:
                             self.reset_serial()
