@@ -924,28 +924,28 @@ class TelaExecucao(QDialog):
         self._cnt_acionamento_botao=0
 
     def para_execucao(self):
-        self.msg_box.exec(msg="Deseja realmente encerar rotina?")
-        if self.msg_box.yes_no == True:
-            self.salva_rotina(finalizado=True)
-            self._nao_passsou_peca = False# Flag de peça não passo habilitada para novo teste
-            self._desabilita_botoes(False)
-            self.ui.lbAvisos.setVisible(True)
-            self.ui.lbAvisos.setText(self._translate("TelaExecucao", "<html><head/><body><p align=\"center\">Máquina pronta</p></body></html>"))
-            self.ui.lbAvisos.setStyleSheet(f"background-color: rgb({self.VERDE});")
-            self._cnt_acionamento_botao=0
-            self.ui.btDescartar.setDisabled(True)# Volta a desabilitar esse botão
-            self.ui.btRetrabalhar.setDisabled(True)# Volta a desabilitar esse botão
-            self.ui.lbContinuIndicaE.setStyleSheet(f"background-color: rgb({self.CINZA});")
-            self.ui.lbContinuIndicaD.setStyleSheet(f"background-color: rgb({self.CINZA});")
-            self.ui.lbIsolaIndicaE.setStyleSheet(f"background-color: rgb({self.CINZA});")
-            self.ui.lbIsolaIndicaD.setStyleSheet(f"background-color: rgb({self.CINZA});")
-            self._visualiza_condu_e = False
-            self._visualiza_condu_d = False
-            self._visualiza_iso_e = False
-            self._visualiza_iso_d = False
-            self._retrabalho = True
-            self.rotina_iniciada = False
-            self.close()
+        #self.msg_box.exec(msg="Deseja realmente encerar rotina?")
+        #if self.msg_box.yes_no == True:
+        self.salva_rotina(finalizado=True)
+        self._nao_passsou_peca = False# Flag de peça não passo habilitada para novo teste
+        self._desabilita_botoes(False)
+        self.ui.lbAvisos.setVisible(True)
+        self.ui.lbAvisos.setText(self._translate("TelaExecucao", "<html><head/><body><p align=\"center\">Máquina pronta</p></body></html>"))
+        self.ui.lbAvisos.setStyleSheet(f"background-color: rgb({self.VERDE});")
+        self._cnt_acionamento_botao=0
+        self.ui.btDescartar.setDisabled(True)# Volta a desabilitar esse botão
+        self.ui.btRetrabalhar.setDisabled(True)# Volta a desabilitar esse botão
+        self.ui.lbContinuIndicaE.setStyleSheet(f"background-color: rgb({self.CINZA});")
+        self.ui.lbContinuIndicaD.setStyleSheet(f"background-color: rgb({self.CINZA});")
+        self.ui.lbIsolaIndicaE.setStyleSheet(f"background-color: rgb({self.CINZA});")
+        self.ui.lbIsolaIndicaD.setStyleSheet(f"background-color: rgb({self.CINZA});")
+        self._visualiza_condu_e = False
+        self._visualiza_condu_d = False
+        self._visualiza_iso_e = False
+        self._visualiza_iso_d = False
+        self._retrabalho = True
+        self.rotina_iniciada = False
+        self.close()
         # self.execucao_habilita_desabilita = False# desabilita para executar programa
         # self.em_execucao = False
         # self.rotina.flag_erro_geral = True
