@@ -34,7 +34,7 @@ class Atualizador(QThread):
         self._running = False
 
 class ExecutaRotinaThread(QThread):
-    sinal_execucao = pyqtSignal(list,list,list,list)# Inicializa com a quantidade de variáveis que se deseja
+    sinal_execucao = pyqtSignal(list,list,list,list,int,int)# Inicializa com a quantidade de variáveis que se deseja
 
     def __init__(self, operacao):
         super().__init__()
@@ -42,6 +42,8 @@ class ExecutaRotinaThread(QThread):
         self._running = True
         self.esquerda_ok =False
         self.direita_ok =False
+        self.mola_esquerda = 0
+        self.mola_direita = 0
 
         self.result_condu_e = []
         self.result_condu_d = []
@@ -56,8 +58,18 @@ class ExecutaRotinaThread(QThread):
                 if self.operacao.em_execucao == True:
                     # Limpa todas as saídas
                     if self.operacao.rotina.abaixa_pistao() == True:
+                        if self.operacao.mola_esquerda == True:
+                            self.mola_esquerda = self.operacao.rotina.mola_esquerda()
+                        else:
+                            self.mola_esquerda = 0 # Se não foi escolhido, sinaliza como ok
+
+                        if self.operacao.mola_direita == True:
+                            self.mola_direita = self.operacao.rotina.mola_direita()
+                        else:
+                            self.mola_direita = 0 # Se não foi escolhido, sinaliza como ok
+
                         # self.operacao.rotina.limpa_saidas_esquerda_direita()# Desativa todos os relés por segurança
-                        if self.operacao.habili_desbilita_esquerdo == True:
+                        if self.operacao.habili_desbilita_esquerdo == True and self.mola_esquerda == 0:
                             self.operacao.qual_teste = self.operacao.TESTE_COND_E
                             self.result_condu_e = self.operacao.rotina.esquerdo_direito_condutividade(0)# Testa O lado esquerdo
                             # Verifica condutividade
@@ -95,7 +107,7 @@ class ExecutaRotinaThread(QThread):
                             self.esquerda_ok = True # Se Lado esquerdo não foi escolhido, sinaliza como ok para poder 
                                                     # continuar com o lado direito
 
-                        if self.operacao.habili_desbilita_direito == True:
+                        if self.operacao.habili_desbilita_direito == True and self.mola_direita == 0:
                             self.operacao.qual_teste = self.operacao.TESTE_COND_D
                             self.result_condu_d = self.operacao.rotina.esquerdo_direito_condutividade(1)# Testa O lado direito
                             # Verifica condutividade
@@ -131,8 +143,10 @@ class ExecutaRotinaThread(QThread):
                         else:
                             self.direita_ok = True # Se Lado direito não foi escolhido, sinaliza como ok para poder 
                                                     # continuar com o lado esquerdo    
-                            
-                    if self.esquerda_ok == True and self.direita_ok == True:
+                    if self.mola_esquerda == 1 or self.mola_direita == 1:
+                        self.operacao.rotina.acende_vermelho()# Se acender vermelho, continua com pistão em baixo
+
+                    elif self.esquerda_ok == True and self.direita_ok == True:
                         self.operacao.rotina.acende_verde()
                         self.operacao.rotina.sobe_pistao()
                     else:
@@ -146,7 +160,7 @@ class ExecutaRotinaThread(QThread):
                     # self.operacao.indica_cor_teste_iso("lbIsolaIndicaD",self.operacao.CINZA, 1)
 
                     # Emite o evento para conclusão so processo
-                    self.sinal_execucao.emit(self.result_condu_e,self.result_iso_e,self.result_condu_d,self.result_iso_d)
+                    self.sinal_execucao.emit(self.result_condu_e,self.result_iso_e,self.result_condu_d,self.result_iso_d, self.mola_esquerda, self.mola_direita)
                     # self.parar()
                     
                 self.msleep(100)  # Cria um atraso de 100 mili segundo
@@ -199,6 +213,8 @@ class TelaExecucao(QDialog):
         self.esquerda_iso_ok = 0
         self.direita_condu_ok = 0
         self.direita_iso_ok = 0
+        self.mola_esquerda = None
+        self.mola_direita = None
 
     def inicializa_cores(self):
         self.VERDE = "170, 255, 127"
@@ -504,13 +520,15 @@ class TelaExecucao(QDialog):
             print("Erro de combinação de eletrodos")
 
     # Método chamado quando finaliza a thread de execução
-    def thread_execucao(self, cond_e, iso_e, cond_d, iso_d):
+    def thread_execucao(self, cond_e, iso_e, cond_d, iso_d, mola_e, mola_d):
         QMetaObject.invokeMethod(self, "execucao", Qt.QueuedConnection, 
                                  Q_ARG(list, cond_e), Q_ARG(list, iso_e), 
-                                 Q_ARG(list, cond_d), Q_ARG(list, iso_d))
+                                 Q_ARG(list, cond_d), Q_ARG(list, iso_d),
+                                 Q_ARG(int, mola_e), Q_ARG(int, mola_d)
+                                 )
 
     @pyqtSlot(list, list, list, list)
-    def execucao(self,  cond_e_, iso_e_, cond_d_, iso_d_):
+    def execucao(self,  cond_e_, iso_e_, cond_d_, iso_d_, mola_e, mola_d):
         if self.em_execucao == True:
             self.qual_teste = self.SEM_TESTE
             self.indica_cor_teste_condu("lbContinuIndicaE",self.CINZA, 0)
@@ -528,17 +546,48 @@ class TelaExecucao(QDialog):
             print(f"Isolação direito: {iso_d_}")
             self.em_execucao = False
             
-            # Verifica se peças passaram
-            if self.habili_desbilita_direito == True and self.habili_desbilita_esquerdo == True:# Se ambos os lados estiverem habilitados
-                if cond_e_ != [] and iso_e_ != [] and cond_d_ != [] and iso_d_ != []:
-                    if self._verifica_condutividade_isolacao(cond_e_, iso_e_) == (True,True) and self._verifica_condutividade_isolacao(cond_d_, iso_d_) == (True,True):
-                        self._carrega_peca_passou(0)
-                        #escrever aqui o liga verde da torre
+            if mola_e == 0 and mola_d == 0:
+                # Verifica se peças passaram
+                if self.habili_desbilita_direito == True and self.habili_desbilita_esquerdo == True:# Se ambos os lados estiverem habilitados
+                    if cond_e_ != [] and iso_e_ != [] and cond_d_ != [] and iso_d_ != []:
+                        if self._verifica_condutividade_isolacao(cond_e_, iso_e_) == (True,True) and self._verifica_condutividade_isolacao(cond_d_, iso_d_) == (True,True):
+                            self._carrega_peca_passou(0)
+                            #escrever aqui o liga verde da torre
 
-                    else:# Verifica qual dos dois não passaram
+                        else:# Verifica qual dos dois não passaram
 
+                            if self._verifica_condutividade_isolacao(cond_e_, iso_e_) == (True,True):
+                                self._carrega_peca_passou(1)# passou a esquerda habilitada
+                            else:
+                                # passa para as variáveis somente o que não passou 
+                                for i in cond_e_:
+                                    if i[2] == 0:
+                                        self.cond_e.append(i)
+                                for i in iso_e_:
+                                    if i[2] == 1:
+                                        self.iso_e.append(i)
+                            if self._verifica_condutividade_isolacao(cond_d_, iso_d_) == (True,True):
+                                self._carrega_peca_passou(2)# passou a direita habilitada
+                            else:
+                                # passa para as variáveis somente o que não passou 
+                                for i in cond_d_:
+                                    if i[2] == 0:
+                                        self.cond_d.append(i)
+                                for i in iso_d_:
+                                    if i[2] == 1:
+                                        self.iso_d.append(i)
+                            self.pausa_execucao()
+                            # self.msg.exec(msg="Favor apertar iniciar para ter acesso a peça.")
+
+                            self._nao_passsou_peca = True
+
+                            #escrever aqui o liga Vermelho da torre
+
+                elif self.habili_desbilita_direito == False and self.habili_desbilita_esquerdo == True:# Se só esquerdo estiver habilitado
+                    if cond_e_ != [] and iso_e_ != []:
                         if self._verifica_condutividade_isolacao(cond_e_, iso_e_) == (True,True):
-                            self._carrega_peca_passou(1)# passou a esquerda habilitada
+                            self._carrega_peca_passou(1)
+                            #escrever aqui o liga verde da torre
                         else:
                             # passa para as variáveis somente o que não passou 
                             for i in cond_e_:
@@ -547,58 +596,37 @@ class TelaExecucao(QDialog):
                             for i in iso_e_:
                                 if i[2] == 1:
                                     self.iso_e.append(i)
+                            self._nao_passsou_peca = True
+                            self.pausa_execucao()
+                            # self.msg.exec(msg="Favor apertar iniciar para ter acesso a peça.")
+                            #escrever aqui o liga vermelha da torre
+
+                elif self.habili_desbilita_direito == True and self.habili_desbilita_esquerdo == False:# Se só direito estiver habilitado
+                    if cond_d_ != [] and iso_d_ != []:
                         if self._verifica_condutividade_isolacao(cond_d_, iso_d_) == (True,True):
-                            self._carrega_peca_passou(2)# passou a direita habilitada
+                            self._carrega_peca_passou(2)
+                            #escrever aqui o liga verde da torre
                         else:
-                            # passa para as variáveis somente o que não passou 
+                            # passa para as variáveis somente o que não passou
                             for i in cond_d_:
                                 if i[2] == 0:
                                     self.cond_d.append(i)
                             for i in iso_d_:
                                 if i[2] == 1:
                                     self.iso_d.append(i)
-                        self.pausa_execucao()
-                        # self.msg.exec(msg="Favor apertar iniciar para ter acesso a peça.")
+                            self._nao_passsou_peca = True
+                            self.pausa_execucao()
+                            # self.msg.exec(msg="Favor apertar iniciar para ter acesso a peça.")
+                            #escrever aqui o liga vermelho da torre
 
-                        self._nao_passsou_peca = True
-
-                        #escrever aqui o liga Vermelho da torre
-
-            elif self.habili_desbilita_direito == False and self.habili_desbilita_esquerdo == True:# Se só esquerdo estiver habilitado
-                if cond_e_ != [] and iso_e_ != []:
-                    if self._verifica_condutividade_isolacao(cond_e_, iso_e_) == (True,True):
-                        self._carrega_peca_passou(1)
-                        #escrever aqui o liga verde da torre
-                    else:
-                        # passa para as variáveis somente o que não passou 
-                        for i in cond_e_:
-                            if i[2] == 0:
-                                self.cond_e.append(i)
-                        for i in iso_e_:
-                            if i[2] == 1:
-                                self.iso_e.append(i)
-                        self._nao_passsou_peca = True
-                        self.pausa_execucao()
-                        # self.msg.exec(msg="Favor apertar iniciar para ter acesso a peça.")
-                        #escrever aqui o liga vermelha da torre
-
-            elif self.habili_desbilita_direito == True and self.habili_desbilita_esquerdo == False:# Se só direito estiver habilitado
-                if cond_d_ != [] and iso_d_ != []:
-                    if self._verifica_condutividade_isolacao(cond_d_, iso_d_) == (True,True):
-                        self._carrega_peca_passou(2)
-                        #escrever aqui o liga verde da torre
-                    else:
-                        # passa para as variáveis somente o que não passou
-                        for i in cond_d_:
-                            if i[2] == 0:
-                                self.cond_d.append(i)
-                        for i in iso_d_:
-                            if i[2] == 1:
-                                self.iso_d.append(i)
-                        self._nao_passsou_peca = True
-                        self.pausa_execucao()
-                        # self.msg.exec(msg="Favor apertar iniciar para ter acesso a peça.")
-                        #escrever aqui o liga vermelho da torre
+            else:
+                if mola_e == 1 and mola_d == 1:
+                    self.msg.exec(msg="Erro nas duas molas, favor verificar")
+                elif mola_e == 1 and mola_d == 0:
+                    self.msg.exec(msg="Erro na mola esquerda, favor verificar")
+                elif mola_e == 0 and mola_d == 1:
+                    self.msg.exec(msg="Erro na mola direita, favor verificar")
+                
         self._cnt_acionamento_botao=0
 
     # qual_passou = 0 : Passou as duas peças
@@ -723,6 +751,8 @@ class TelaExecucao(QDialog):
         return ret_cond, ret_iso
 
     def load_config(self):
+        self.mola_esquerda = self.ui.cbMolaEsquerda.isChecked()
+        self.mola_direita = self.ui.cbMolaDireita.isChecked()
         self.qual_teste = self.SEM_TESTE
         self.muda_cor_obj("lbContinuIndicaE",self.CINZA)
         self.muda_cor_obj("lbContinuIndicaD",self.CINZA)
