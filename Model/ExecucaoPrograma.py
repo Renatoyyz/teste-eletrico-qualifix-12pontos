@@ -1136,6 +1136,8 @@ class TelaExecucao(QDialog):
         self.ui.btDesHabDireito.setEnabled(hab_dasab)
         self.ui.btVoltar.setEnabled(hab_dasab)
         self.ui.btContato.setEnabled(hab_dasab)
+        self.ui.cbMolaEsquerda.setEnabled(hab_dasab)
+        self.ui.cbMolaDireita.setEnabled(hab_dasab)
 
     def salva_rotina(self, finalizado=False):
         try:
