@@ -243,13 +243,13 @@ class Ui_TelaExecucao(object):
         self.lbAvisos.setGeometry(QtCore.QRect(335, 80, 351, 22))
         self.lbAvisos.setObjectName("lbAvisos")
         self.btRetrabalhar = QtWidgets.QPushButton(TelaExecucao)
-        self.btRetrabalhar.setGeometry(QtCore.QRect(432, 640, 160, 40))
+        self.btRetrabalhar.setGeometry(QtCore.QRect(432, 660, 160, 40))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.btRetrabalhar.setFont(font)
         self.btRetrabalhar.setObjectName("btRetrabalhar")
         self.btDescartar = QtWidgets.QPushButton(TelaExecucao)
-        self.btDescartar.setGeometry(QtCore.QRect(432, 593, 160, 40))
+        self.btDescartar.setGeometry(QtCore.QRect(432, 610, 160, 40))
         font = QtGui.QFont()
         font.setPointSize(18)
         self.btDescartar.setFont(font)
@@ -303,11 +303,17 @@ class Ui_TelaExecucao(object):
         self.lbEletrodo11_D.setMidLineWidth(1)
         self.lbEletrodo11_D.setObjectName("lbEletrodo11_D")
         self.cbMolaEsquerda = QtWidgets.QCheckBox(TelaExecucao)
-        self.cbMolaEsquerda.setGeometry(QtCore.QRect(177, 740, 150, 25))
+        self.cbMolaEsquerda.setGeometry(QtCore.QRect(430, 500, 160, 40))
+        self.cbMolaEsquerda.setStyleSheet("background-color: rgb(222, 221, 218);\n"
+"border-color: rgb(0, 0, 0);\n"
+"alternate-background-color: rgb(192, 191, 188);")
         self.cbMolaEsquerda.setChecked(True)
         self.cbMolaEsquerda.setObjectName("cbMolaEsquerda")
         self.cbMolaDireita = QtWidgets.QCheckBox(TelaExecucao)
-        self.cbMolaDireita.setGeometry(QtCore.QRect(680, 740, 141, 25))
+        self.cbMolaDireita.setGeometry(QtCore.QRect(431, 560, 160, 40))
+        self.cbMolaDireita.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.cbMolaDireita.setStyleSheet("background-color: rgb(222, 221, 218);\n"
+"alternate-background-color: rgb(192, 191, 188);")
         self.cbMolaDireita.setChecked(True)
         self.cbMolaDireita.setObjectName("cbMolaDireita")
 
@@ -375,8 +381,8 @@ class Ui_TelaExecucao(object):
         self.lbEletrodo10_D.setText(_translate("TelaExecucao", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">10</span></p></body></html>"))
         self.lbEletrodo12_D.setText(_translate("TelaExecucao", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">12</span></p></body></html>"))
         self.lbEletrodo11_D.setText(_translate("TelaExecucao", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600;\">11</span></p></body></html>"))
-        self.cbMolaEsquerda.setText(_translate("TelaExecucao", "Mola esquerda"))
-        self.cbMolaDireita.setText(_translate("TelaExecucao", "Mola direita"))
+        self.cbMolaEsquerda.setText(_translate("TelaExecucao", "  MOLA ESQUERDA"))
+        self.cbMolaDireita.setText(_translate("TelaExecucao", "    MOLA DIREITA"))
 
 
 if __name__ == "__main__":
