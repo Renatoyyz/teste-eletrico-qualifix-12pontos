@@ -816,9 +816,11 @@ class RotinaPrg:
         self.io.wp_8027(self.io.ADR_4, 5, 0) # Desliga pistão de marcação esquerdo
 
     def mola_esquerda(self):
+        print(f"Valor mola equerda{self.io.wp_8026(self.io.ADR_4, 4)}")
         return self.io.wp_8026(self.io.ADR_4, 4) # Leitura do sensor de mola esquerda
     
     def mola_direita(self):
+        print(f"Valor mola direita{self.io.wp_8026(self.io.ADR_4, 5)}")
         return self.io.wp_8026(self.io.ADR_4, 5) # Leitura do sensor de mola direita
 
     def limpa_saidas_esquerda_direita(self):

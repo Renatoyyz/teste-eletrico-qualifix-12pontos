@@ -61,15 +61,15 @@ class ExecutaRotinaThread(QThread):
                         if self.operacao.mola_esquerda == True:
                             self.mola_esquerda = self.operacao.rotina.mola_esquerda()
                         else:
-                            self.mola_esquerda = 0 # Se não foi escolhido, sinaliza como ok
+                            self.mola_esquerda = 1 # Se não foi escolhido, sinaliza como ok
 
                         if self.operacao.mola_direita == True:
                             self.mola_direita = self.operacao.rotina.mola_direita()
                         else:
-                            self.mola_direita = 0 # Se não foi escolhido, sinaliza como ok
+                            self.mola_direita = 1 # Se não foi escolhido, sinaliza como ok
 
                         # self.operacao.rotina.limpa_saidas_esquerda_direita()# Desativa todos os relés por segurança
-                        if self.operacao.habili_desbilita_esquerdo == True and self.mola_esquerda == 0:
+                        if self.operacao.habili_desbilita_esquerdo == True and self.mola_esquerda == 1:
                             self.operacao.qual_teste = self.operacao.TESTE_COND_E
                             self.result_condu_e = self.operacao.rotina.esquerdo_direito_condutividade(0)# Testa O lado esquerdo
                             # Verifica condutividade
@@ -107,7 +107,7 @@ class ExecutaRotinaThread(QThread):
                             self.esquerda_ok = True # Se Lado esquerdo não foi escolhido, sinaliza como ok para poder 
                                                     # continuar com o lado direito
 
-                        if self.operacao.habili_desbilita_direito == True and self.mola_direita == 0:
+                        if self.operacao.habili_desbilita_direito == True and self.mola_direita == 1:
                             self.operacao.qual_teste = self.operacao.TESTE_COND_D
                             self.result_condu_d = self.operacao.rotina.esquerdo_direito_condutividade(1)# Testa O lado direito
                             # Verifica condutividade
@@ -143,7 +143,7 @@ class ExecutaRotinaThread(QThread):
                         else:
                             self.direita_ok = True # Se Lado direito não foi escolhido, sinaliza como ok para poder 
                                                     # continuar com o lado esquerdo    
-                    if self.mola_esquerda == 1 or self.mola_direita == 1:
+                    if self.mola_esquerda == 0 or self.mola_direita == 0:
                         self.operacao.rotina.acende_vermelho()# Se acender vermelho, continua com pistão em baixo
 
                     elif self.esquerda_ok == True and self.direita_ok == True:
@@ -279,6 +279,8 @@ class TelaExecucao(QDialog):
         self.ui.lbContinuIndicaD.mousePressEvent = self.select_visu_cond_d
         self.ui.lbIsolaIndicaE.mousePressEvent = self.select_visu_iso_e
         self.ui.lbIsolaIndicaD.mousePressEvent = self.select_visu_iso_d
+        self.ui.cbMolaEsquerda.stateChanged.connect(self.select_mola_esquerda)
+        self.ui.cbMolaDireita.stateChanged.connect(self.select_mola_direita)
 
     def carregar_configuracoes(self):
         self.load_config()
@@ -295,6 +297,20 @@ class TelaExecucao(QDialog):
         self.atualizador.iniciar()
 
         QApplication.processEvents()  # Mantém a UI responsiva após iniciar as threads
+
+    def select_mola_esquerda(self, event):
+        if self.ui.cbMolaEsquerda.isChecked() == True:
+            self.mola_esquerda = True
+        else:
+            self.mola_esquerda = False
+        # pass
+
+    def select_mola_direita(self, event):
+        if self.ui.cbMolaDireita.isChecked() == True:
+            self.mola_direita = True
+        else:
+            self.mola_direita = False
+        # pass
 
     def muda_texto_obj(self, obj_str, text):
         obj_tom_conec = f"{obj_str}"
@@ -527,7 +543,7 @@ class TelaExecucao(QDialog):
                                  Q_ARG(int, mola_e), Q_ARG(int, mola_d)
                                  )
 
-    @pyqtSlot(list, list, list, list)
+    @pyqtSlot(list, list, list, list, int, int)
     def execucao(self,  cond_e_, iso_e_, cond_d_, iso_d_, mola_e, mola_d):
         if self.em_execucao == True:
             self.qual_teste = self.SEM_TESTE
@@ -546,7 +562,7 @@ class TelaExecucao(QDialog):
             print(f"Isolação direito: {iso_d_}")
             self.em_execucao = False
             
-            if mola_e == 0 and mola_d == 0:
+            if mola_e == 1 and mola_d == 1:
                 # Verifica se peças passaram
                 if self.habili_desbilita_direito == True and self.habili_desbilita_esquerdo == True:# Se ambos os lados estiverem habilitados
                     if cond_e_ != [] and iso_e_ != [] and cond_d_ != [] and iso_d_ != []:
@@ -620,12 +636,13 @@ class TelaExecucao(QDialog):
                             #escrever aqui o liga vermelho da torre
 
             else:
-                if mola_e == 1 and mola_d == 1:
+                if mola_e == 0 and mola_d == 0:
                     self.msg.exec(msg="Erro nas duas molas, favor verificar")
-                elif mola_e == 1 and mola_d == 0:
-                    self.msg.exec(msg="Erro na mola esquerda, favor verificar")
                 elif mola_e == 0 and mola_d == 1:
+                    self.msg.exec(msg="Erro na mola esquerda, favor verificar")
+                elif mola_e == 1 and mola_d == 0:
                     self.msg.exec(msg="Erro na mola direita, favor verificar")
+                self.pausa_execucao()
                 
         self._cnt_acionamento_botao=0
 
